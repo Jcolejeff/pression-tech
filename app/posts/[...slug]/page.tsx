@@ -30,15 +30,13 @@ const allPosts = [
 	},
 ];
 
-export { allPosts };
-
 interface PostProps {
 	params: {
 		slug: string[];
 	};
 }
 
-async function getPostFromParams(params: PostProps["params"]) {
+async function getPostFromParams(params: any) {
 	const slug = params?.slug?.join("/");
 	const post = allPosts.find((post) => post.slugAsParams === slug);
 
@@ -49,9 +47,7 @@ async function getPostFromParams(params: PostProps["params"]) {
 	return post;
 }
 
-export async function generateMetadata({
-	params,
-}: PostProps): Promise<Metadata> {
+export async function generateMetadata({ params }: any): Promise<any> {
 	const post = await getPostFromParams(params);
 
 	if (!post) {
@@ -64,13 +60,13 @@ export async function generateMetadata({
 	};
 }
 
-export async function generateStaticParams(): Promise<PostProps["params"][]> {
+export async function generateStaticParams(): Promise<any> {
 	return allPosts.map((post) => ({
 		slug: post.slugAsParams.split("/"),
 	}));
 }
 
-export default async function PostPage({ params }: PostProps) {
+export default async function PostPage({ params }: any) {
 	const post = await getPostFromParams(params);
 
 	if (!post) {
