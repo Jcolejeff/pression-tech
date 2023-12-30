@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const allPosts = [
@@ -30,6 +31,8 @@ const allPosts = [
 export default function Home() {
 	return (
 		<div className="prose dark:prose-invert">
+			<Button className="p-5">Destructive</Button>
+
 			{allPosts.map((post) => (
 				<article key={post._id}>
 					<Link href={post.slug}>
