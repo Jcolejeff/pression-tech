@@ -28,6 +28,14 @@ const allPosts = [
 			code: "console.log('Welcome to the blog!');",
 		},
 	},
+	{
+		slugAsParams: "post-4",
+		title: "Post 4",
+		description: "This is the fourth post",
+		body: {
+			code: "console.log('Welcome to the blog!');",
+		},
+	},
 ];
 
 interface PostProps {

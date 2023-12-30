@@ -19,6 +19,12 @@ const allPosts = [
 		title: "Post 3",
 		description: "This is the third post",
 	},
+	{
+		_id: 4,
+		slug: "posts/post-4",
+		title: "Post 4",
+		description: "This is the fourth post",
+	},
 ];
 
 export default function Home() {
