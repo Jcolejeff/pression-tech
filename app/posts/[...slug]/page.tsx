@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 
 import { Metadata } from "next";
-import { Mdx } from "@/components/mdx-components";
 
 const allPosts = [
 	{
