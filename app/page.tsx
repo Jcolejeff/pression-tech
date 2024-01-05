@@ -1,46 +1,71 @@
-import { Button } from "@/components/ui/button";
+"use client";
 import Link from "next/link";
-
-const allPosts = [
-	{
-		_id: 1,
-		slug: "posts/post-1",
-		title: "Post 1",
-		description: "This is the first post",
-	},
-	{
-		_id: 2,
-		slug: "posts/post-2",
-		title: "Post 2",
-		description: "This is the second post",
-	},
-	{
-		_id: 3,
-		slug: "posts/post-3",
-		title: "Post 3",
-		description: "This is the third post",
-	},
-	{
-		_id: 4,
-		slug: "posts/post-4",
-		title: "Post 4",
-		description: "This is the fourth post",
-	},
-];
+import LandingHero from "@/components/landing/hero";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import ForClients from "@/components/landing/ForClients";
+import ForTalents from "@/components/landing/ForTalents";
+import ReviewSlide from "@/components/ReviewsSlide";
+import WhereOurMerchantsAre from "@/components/WhereOurMerchantsAre";
+import BusinessSelection from "@/components/BusinessSelection";
+import TextFormat from "@/lib/helpers/TextFormat";
 
 export default function Home() {
-	return (
-		<div className="prose dark:prose-invert">
-			<Button className="p-5">Destructive</Button>
+   const [switchMode, setSwitchMode] = useState<string>("talents");
 
-			{allPosts.map((post) => (
-				<article key={post._id}>
-					<Link href={post.slug}>
-						<h2>{post.title}</h2>
-					</Link>
-					{post.description && <p>{post.description}</p>}
-				</article>
-			))}
-		</div>
-	);
+   const checkModeToRender = () => {
+      if (switchMode === "talents") {
+         return <ForTalents />;
+      } else {
+         return <ForClients />;
+      }
+   };
+
+   return (
+      <div className="h-full w-full">
+         <LandingHero />
+
+         {/* toggle buttons for talents and clients */}
+         <section className=" mb-6 flex  w-full justify-center">
+            <div className=" flex  w-fit justify-center gap-4 rounded-full bg-slate-100 px-4 py-2">
+               <Button
+                  onClick={() => setSwitchMode("talents")}
+                  className={`${
+                     switchMode === "talents"
+                        ? " bg-primary-1"
+                        : "bg-transparent text-gray-400 hover:text-white"
+                  } rounded-full px-8 py-3 transition-all duration-300 ease-linear`}
+               >
+                  For Talents
+               </Button>
+               <Button
+                  onClick={() => setSwitchMode("clients")}
+                  className={`${
+                     switchMode === "clients"
+                        ? " bg-primary-1"
+                        : "bg-transparent text-gray-400 hover:text-white"
+                  } rounded-full px-8 py-3 transition-all duration-300 ease-linear`}
+               >
+                  For Clients
+               </Button>
+            </div>
+         </section>
+         <section>{checkModeToRender()}</section>
+
+         <section className="container relative my-24  w-full max-w-[1700px]  overflow-x-hidden px-container-base lg:px-container-lg xl:px-container-xl">
+            <div className="">
+               <h2 className="text-[2rem]  font-[600] leading-[130%] tracking-[0.02rem] transition-all duration-500 ease-in-out md:text-[3rem] md:leading-[4rem] md:tracking-[0.0225rem]">
+                  <TextFormat
+                     text={`Record, sell and Streamline Transations`}
+                     keyword={"Streamline Transations"}
+                     keywordClassName="text-primary-1 transition-all duration-500 ease-in-out"
+                  />
+               </h2>
+            </div>
+            {/* <ReviewSlide />
+            <BusinessSelection />
+            <WhereOurMerchantsAre /> */}
+         </section>
+      </div>
+   );
 }
