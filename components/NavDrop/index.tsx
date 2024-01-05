@@ -73,7 +73,7 @@ const NavDrop = ({ darkNavBg }: INavDrop) => {
                   </span>
                </NavigationMenuItem>
                <NavigationMenuItem>
-                  <NavigationMenuTrigger cl>Components</NavigationMenuTrigger>
+                  <NavigationMenuTrigger>Components</NavigationMenuTrigger>
                   <NavigationMenuContent>
                      <ul className="grid w-[400px] list-none gap-3 p-4 md:w-[500px] md:grid-cols-2  lg:w-[600px]">
                         {components.map((component) => (
