@@ -12,6 +12,7 @@ import menuDotsOpened from "@/public/svgs/menuDotsOpened.svg";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { IoIosSearch } from "react-icons/io";
 
 interface Props {
    darkNavBg?: boolean;
@@ -68,22 +69,25 @@ const NavBar: React.FC<Props> = ({ darkNavBg }) => {
          <div className="flex w-full items-center justify-between py-[1.2rem] md:pb-[1rem] md:pt-[1.5rem] lg:border-b-secondary-1 xxl:py-8">
             <div className="flex w-full items-center gap-[2.5rem]">
                <a href="/" className="flex items-center gap-4">
-                  <img src={url("/images/logo.svg")} alt="" className="w-16 md:w-32" />
+                  <img src={url("/images/logo.svg")} alt="" className="w-8 md:w-10" />
                </a>
-               <div className="hidden items-center gap-[0.5rem] lg:flex">
+               {/* <div className="hidden items-center gap-[0.5rem] lg:flex">
                   <NavDrop darkNavBg={darkNavBg} />
-               </div>
+               </div> */}
             </div>
 
             <div className="invisible ml-[-6px] flex items-center justify-end gap-4 transition-all duration-500 ease-in-out md:visible md:mb-0 md:w-1/2">
+               <div className="hidden items-center gap-[0.5rem] lg:flex">
+                  <NavDrop darkNavBg={darkNavBg} />
+               </div>
                {/* dark mode toggle */}
                <ModeToggle />
-               <div className="flex items-center justify-center rounded-full bg-black md:px-6 md:py-3">
+               {/* <div className="flex items-center justify-center rounded-full bg-black md:px-6 md:py-3">
                   <p className="text-sm font-semibold tracking-wider text-white md:text-[1rem]">
                      Lets Talk
                   </p>
-               </div>
-               <Menubar ref={menuRef} className={"rounded-full"}>
+               </div> */}
+               {/* <Menubar ref={menuRef} className={"rounded-full"}>
                   <MenubarMenu>
                      <MenubarTrigger
                         className={
@@ -108,10 +112,10 @@ const NavBar: React.FC<Props> = ({ darkNavBg }) => {
                               )}
                            </span>
                         </p>
-                        {/* {
+                        {
                            !isMenuOpen ? (<p>Menu <span className="ms-3"><Image src={url(menuDotsClosed)} alt="" /></span></>) 
                            : (<>Close <span className="ms-3"><Image src={url(menuDotsOpened)} alt="" /></span></>)
-                        } */}
+                        }
                      </MenubarTrigger>
                      <MenubarContent>
                         {menuItems?.map((menuItem, index) => {
@@ -139,10 +143,13 @@ const NavBar: React.FC<Props> = ({ darkNavBg }) => {
                         })}
                      </MenubarContent>
                   </MenubarMenu>
-               </Menubar>
+               </Menubar> */}
                {/* <div className="flex items-center justify-center rounded-full bg-white md:px-6 md:py-3">
                   <p className="text-sm font-semibold tracking-wider  md:text-[1rem]">Menu</p>
                </div> */}
+               <span className="text-[1.2rem] font-[700] text-white">
+                  <IoIosSearch style={{ width: "4rem" }} />
+               </span>
             </div>
             <div className="flex md:hidden">
                <Menu />

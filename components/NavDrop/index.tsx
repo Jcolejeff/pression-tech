@@ -16,6 +16,7 @@ import {
 } from "components/ui/navigation-menu";
 import { capitalizeFirstLetter } from "lib/helpers";
 import { url } from "lib/utils";
+import { IoIosSearch } from "react-icons/io";
 interface INavDrop {
    darkNavBg?: boolean;
 }
@@ -61,19 +62,7 @@ const NavDrop = ({ darkNavBg }: INavDrop) => {
          <NavigationMenu>
             <NavigationMenuList>
                <NavigationMenuItem>
-                  <span className=" block cursor-pointer px-4   font-[400] leading-[1.5rem] tracking-[0.005rem] lg:text-[1.15rem]">
-                     <a href={url("/")}>Overview</a>
-                  </span>
-               </NavigationMenuItem>
-               <NavigationMenuItem>
-                  <span
-                     className={` block cursor-pointer px-4  font-[400]  leading-[1.5rem] tracking-[0.005rem] lg:text-[1.15rem] `}
-                  >
-                     <a href={url("/#features")}>Features</a>
-                  </span>
-               </NavigationMenuItem>
-               <NavigationMenuItem>
-                  <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+                  <NavigationMenuTrigger>Tech</NavigationMenuTrigger>
                   <NavigationMenuContent>
                      <ul className="grid w-[400px] list-none gap-3 p-4 md:w-[500px] md:grid-cols-2  lg:w-[600px]">
                         {components.map((component) => (
@@ -89,7 +78,7 @@ const NavDrop = ({ darkNavBg }: INavDrop) => {
                   </NavigationMenuContent>
                </NavigationMenuItem>
 
-               <NavigationMenuItem>
+               {/* <NavigationMenuItem>
                   <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
                   <NavigationMenuContent>
                      <ul className="grid list-none gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
@@ -118,6 +107,41 @@ const NavDrop = ({ darkNavBg }: INavDrop) => {
                         </ListItem>
                      </ul>
                   </NavigationMenuContent>
+               </NavigationMenuItem> */}
+
+               <NavigationMenuItem>
+                  <span className=" block cursor-pointer px-4   font-[700] leading-[1.5rem] tracking-[0.005rem] text-white lg:text-[1rem]">
+                     <a href={url("/")}>Science</a>
+                  </span>
+               </NavigationMenuItem>
+               <NavigationMenuItem>
+                  <span
+                     className={` block cursor-pointer px-4  font-[700] leading-[1.5rem]  tracking-[0.005rem] text-white lg:text-[1rem] `}
+                  >
+                     <a href={url("/#features")}>Entertainment</a>
+                  </span>
+               </NavigationMenuItem>
+
+               <NavigationMenuItem>
+                  <span
+                     className={` block cursor-pointer px-4  font-[700] leading-[1.5rem]  tracking-[0.005rem] text-white lg:text-[1rem] `}
+                  >
+                     <a href={url("/#features")}>TechTv</a>
+                  </span>
+               </NavigationMenuItem>
+               <NavigationMenuItem>
+                  <span
+                     className={` block cursor-pointer px-4  font-[700] leading-[1.5rem]  tracking-[0.005rem] text-white lg:text-[1rem] `}
+                  >
+                     <a href={url("/#features")}>Cryptocurrency</a>
+                  </span>
+               </NavigationMenuItem>
+               <NavigationMenuItem>
+                  <span
+                     className={` block cursor-pointer px-4  font-[700] leading-[1.5rem]  tracking-[0.005rem] text-white lg:text-[1rem] `}
+                  >
+                     <a href={url("/#features")}>ContactUs</a>
+                  </span>
                </NavigationMenuItem>
             </NavigationMenuList>
          </NavigationMenu>

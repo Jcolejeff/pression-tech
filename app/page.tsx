@@ -5,10 +5,16 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import ForClients from "@/components/landing/ForClients";
 import ForTalents from "@/components/landing/ForTalents";
-import ReviewSlide from "@/components/ReviewsSlide";
+import LatestPosts from "@/components/landing/LatestPosts";
 import WhereOurMerchantsAre from "@/components/WhereOurMerchantsAre";
 import BusinessSelection from "@/components/BusinessSelection";
 import TextFormat from "@/lib/helpers/TextFormat";
+import EditorsPick from "@/components/landing/EditorsPick";
+import FeaturedArticles from "@/components/landing/FeaturedArticles";
+import Trending from "@/components/landing/Trending";
+import Newsletter from "@/components/landing/Newsletter";
+import Finance from "@/components/landing/Finance";
+import FeaturedPosts from "@/components/landing/FeaturedPosts";
 
 export default function Home() {
    const [switchMode, setSwitchMode] = useState<string>("talents");
@@ -26,7 +32,7 @@ export default function Home() {
          <LandingHero />
 
          {/* toggle buttons for talents and clients */}
-         <section className=" mb-6 flex  w-full justify-center">
+         {/* <section className=" mb-6 flex  w-full justify-center">
             <div className=" flex  w-fit justify-center gap-4 rounded-full bg-slate-100 px-4 py-2">
                <Button
                   onClick={() => setSwitchMode("talents")}
@@ -50,9 +56,9 @@ export default function Home() {
                </Button>
             </div>
          </section>
-         <section>{checkModeToRender()}</section>
+         <section>{checkModeToRender()}</section> */}
 
-         <section className="container relative my-24  w-full max-w-[1700px]  overflow-x-hidden px-container-base lg:px-container-lg xl:px-container-xl">
+         {/* <section className="container relative my-24  w-full max-w-[1700px]  overflow-x-hidden px-container-base lg:px-container-lg xl:px-container-xl">
             <div className="">
                <h2 className="text-[2rem]  font-[600] leading-[130%] tracking-[0.02rem] transition-all duration-500 ease-in-out md:text-[3rem] md:leading-[4rem] md:tracking-[0.0225rem]">
                   <TextFormat
@@ -62,10 +68,17 @@ export default function Home() {
                   />
                </h2>
             </div>
-            {/* <ReviewSlide />
+            <ReviewSlide />
             <BusinessSelection />
-            <WhereOurMerchantsAre /> */}
-         </section>
+            <WhereOurMerchantsAre />
+         </section> */}
+         <LatestPosts />
+         <EditorsPick />
+         <FeaturedArticles />
+         <Trending />
+         <Newsletter />
+         <Finance />
+         <FeaturedPosts />
       </div>
    );
 }

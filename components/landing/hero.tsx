@@ -2,6 +2,8 @@ import React from "react";
 import LogoMarquee from "../LogoSlide";
 import Image from "next/image";
 import arrowImg from "@/public/images/landing/arrow.svg";
+import heroBg from "@/public/images/landing/Mask group.svg";
+import { url } from "@/lib/utils";
 
 const LandingHero = () => {
    const images = [
@@ -13,10 +15,16 @@ const LandingHero = () => {
       "/images/landing/framer.svg",
    ];
    return (
-      <div className="w-full ">
-         <section className="mt-20 w-full overflow-hidden bg-primary-1 text-white">
-            <section className="container relative w-full max-w-[1700px] px-container-base py-[3rem] pb-20 md:py-[5rem] md:pb-[7.25rem] md:pt-[6rem] lg:px-container-lg xl:px-container-xl">
-               <div className="relative flex w-full flex-col justify-center gap-[2.5rem] md:gap-[2.75rem]">
+      <div className="w-full">
+         <section
+            className="mt-20 w-full overflow-hidden border  bg-primary-1 text-white"
+            style={{
+               backgroundImage: `${url("/images/landing/Mask group.svg")}`,
+               backgroundSize: "cover",
+            }}
+         >
+            <section className="container  relative w-full max-w-[1700px] border px-container-base py-[3rem] pb-20 md:py-[5rem] md:pb-[7.25rem] md:pt-[6rem] lg:px-container-lg xl:px-container-xl">
+               {/* <div className="relative flex w-full flex-col justify-center gap-[2.5rem] border md:gap-[2.75rem]">
                   <div className="flex flex-col items-center justify-center gap-6 2xl:gap-8">
                      <h1 className="text-center  text-[2.3rem] font-[700] uppercase leading-[130%] tracking-[0.02rem] transition-all duration-500 ease-in-out md:max-w-[60rem] md:text-[4.4rem] md:leading-[5rem] md:tracking-[0.0225rem] lg:ml-[-0.2rem]">
                         we equip Techies With hands-on experience!
@@ -34,15 +42,27 @@ const LandingHero = () => {
                         <Image src={arrowImg} alt="" />
                      </div>
                   </div>
+               </div> */}
+               <div className="md:max-w-[50%]">
+                  <h4 className="text-[1.2rem] font-[700]">Science</h4>
+                  <h2 className="mt-2 text-[2rem]">
+                     Artificial intelligence taking over with astonishing image generator, gained
+                     more awareness in non-fungible token
+                  </h2>
+               </div>
+               <div className="mt-10">
+                  <span className=" border p-[1rem]">
+                     <a>Continue Reading</a>
+                  </span>
                </div>
             </section>
          </section>
-         <div className="flex flex-col items-center gap-8 py-12  transition-all duration-500 ease-in-out">
+         {/* <div className="flex flex-col items-center gap-8 py-12  transition-all duration-500 ease-in-out">
             <h3 className="text-sm font-[800] uppercase text-black dark:text-white md:text-xl ">
                our finalists work at
             </h3>
             <LogoMarquee images={images} />
-         </div>
+         </div> */}
       </div>
    );
 };
