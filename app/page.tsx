@@ -15,7 +15,6 @@ import Trending from "@/components/landing/Trending";
 import Newsletter from "@/components/landing/Newsletter";
 import Finance from "@/components/landing/Finance";
 import FeaturedPosts from "@/components/landing/FeaturedPosts";
-import ReviewSlide from "@/components/ReviewsSlide";
 
 export default function Home() {
    const [switchMode, setSwitchMode] = useState<string>("talents");

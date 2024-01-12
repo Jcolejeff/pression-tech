@@ -4,6 +4,7 @@ import Image from "next/image";
 import arrowImg from "@/public/images/landing/arrow.svg";
 import heroBg from "@/public/images/landing/Mask group.svg";
 import { url } from "@/lib/utils";
+import ReviewSlide from "@/components/ReviewsSlide";
 
 const LandingHero = () => {
    const images = [
@@ -16,14 +17,8 @@ const LandingHero = () => {
    ];
    return (
       <div className="w-full">
-         <section
-            className="mt-20 w-full overflow-hidden border bg-[url('/blog-post-1.jpg')] text-white"
-            // style={{
-            //    backgroundImage: `${url("/images/landing/Mask group.svg")}`,
-            //    backgroundSize: "cover",
-            // }}
-         >
-            <section className="container  relative w-full max-w-[1700px] border px-container-base py-[3rem] pb-20 md:py-[5rem] md:pb-[7.25rem] md:pt-[6rem] lg:px-container-lg xl:px-container-xl">
+         <section className="bg mt-20 w-full overflow-hidden   bg-[url('/herobg.jpg')] bg-cover   bg-no-repeat text-white">
+            <section className="container  relative w-full max-w-[1700px]  px-container-base py-[3rem] pb-20 md:py-[5rem] md:pb-[7.25rem] md:pt-[6rem] lg:px-container-lg xl:px-container-xl">
                {/* <div className="relative flex w-full flex-col justify-center gap-[2.5rem] border md:gap-[2.75rem]">
                   <div className="flex flex-col items-center justify-center gap-6 2xl:gap-8">
                      <h1 className="text-center  text-[2.3rem] font-[700] uppercase leading-[130%] tracking-[0.02rem] transition-all duration-500 ease-in-out md:max-w-[60rem] md:text-[4.4rem] md:leading-[5rem] md:tracking-[0.0225rem] lg:ml-[-0.2rem]">
@@ -55,14 +50,9 @@ const LandingHero = () => {
                      <a>Continue Reading</a>
                   </span>
                </div>
+               <ReviewSlide />
             </section>
          </section>
-         {/* <div className="flex flex-col items-center gap-8 py-12  transition-all duration-500 ease-in-out">
-            <h3 className="text-sm font-[800] uppercase text-black dark:text-white md:text-xl ">
-               our finalists work at
-            </h3>
-            <LogoMarquee images={images} />
-         </div> */}
       </div>
    );
 };

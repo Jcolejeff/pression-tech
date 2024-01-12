@@ -11,14 +11,14 @@ const ReviewSlide = () => {
       {
          breakpoint: 800,
          settings: {
-            slidesToShow: 2,
+            slidesToShow: 3,
             slidesToScroll: 2,
          },
       },
       {
          breakpoint: 600,
          settings: {
-            slidesToShow: 2,
+            slidesToShow: 3,
             slidesToScroll: 2,
          },
       },
@@ -80,26 +80,14 @@ const ReviewSlide = () => {
    ];
 
    return (
-      <section className="py-20 pb-12  lg:grid lg:grid-cols-3  lg:gap-8">
-         <div className="   mb-8 h-fit rounded-2xl lg:mb-0 ">
-            <div className="h-1  w-full rounded-full  bg-primary-1 md:h-2"></div>
-            <div className="mt-4 flex flex-col justify-between gap-12 md:mt-8 lg:gap-24">
-               <p className="max-w-xl   text-xl font-semibold">
-                  Here’s what users think about Timbu Cash Register and we are just getting started!
-               </p>
-               <p className="text-[4rem] font-[700] ">
-                  4.5
-                  <span className="text-base font-semibold">{"   "} out of 5 (Average Rating)</span>
-               </p>
-            </div>
-         </div>
-         <div className="col-span-2   w-full  ">
+      <section className="flex w-full justify-end  py-20 pb-12">
+         <div className="col-span-2   w-2/3  ">
             <Slide
                // vertical
                arrows={false}
                ref={slideRef}
                slidesToScroll={1}
-               slidesToShow={2}
+               slidesToShow={3}
                indicators={true}
                cssClass="py-4"
                {...properties}
@@ -139,14 +127,14 @@ const ReviewSlide = () => {
                   type="button"
                   onClick={() => slideRef?.current?.goBack()}
                >
-                  <ArrowLeft className="w-4" />
+                  <ArrowLeft className="w-4 text-black" />
                </button>
                <button
                   className=" rounded-full border border-gray-50/10 bg-slate-200 p-2  transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-sm lg:p-3"
                   type="button"
                   onClick={() => slideRef?.current?.goNext()}
                >
-                  <ArrowRight className="w-4" />
+                  <ArrowRight className="w-4 text-black" />
                </button>
             </div>
          </div>
