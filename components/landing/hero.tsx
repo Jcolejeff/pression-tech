@@ -17,7 +17,7 @@ const LandingHero = () => {
    ];
    return (
       <div className="w-full">
-         <section className="bg mt-20 w-full overflow-hidden   bg-[url('/herobg.jpg')] bg-cover   bg-no-repeat text-white">
+         <section className="bg mt-20 w-full overflow-hidden   bg-[url('/herobg2.jpg')] bg-cover bg-center   bg-no-repeat text-white">
             <section className="container  relative w-full max-w-[1700px]  px-container-base py-[3rem] pb-20 md:py-[5rem] md:pb-[7.25rem] md:pt-[6rem] lg:px-container-lg xl:px-container-xl">
                {/* <div className="relative flex w-full flex-col justify-center gap-[2.5rem] border md:gap-[2.75rem]">
                   <div className="flex flex-col items-center justify-center gap-6 2xl:gap-8">

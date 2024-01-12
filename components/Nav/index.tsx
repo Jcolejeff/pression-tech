@@ -66,7 +66,7 @@ const NavBar: React.FC<Props> = ({ darkNavBg }) => {
 
    console.log(currentURL);
    return (
-      <nav className="container max-w-[1700px] bg-transparent px-container-base lg:px-container-lg xl:px-container-xl">
+      <nav className="container max-w-[1700px]  px-container-base lg:px-container-lg xl:px-container-xl">
          <div className="flex w-full items-center justify-between py-[1.2rem] md:pb-[1rem] md:pt-[1.5rem] lg:border-b-secondary-1 xxl:py-8">
             <div className="flex w-full items-center gap-[2.5rem]">
                <a href="/" className="flex items-center gap-4">

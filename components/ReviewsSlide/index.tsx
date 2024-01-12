@@ -81,7 +81,7 @@ const ReviewSlide = () => {
 
    return (
       <section className="flex w-full justify-end  py-20 pb-12">
-         <div className="col-span-2   w-2/3  ">
+         <div className="col-span-2   w-10/12  ">
             <Slide
                // vertical
                arrows={false}
