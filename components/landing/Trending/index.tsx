@@ -60,7 +60,7 @@ const Trending = () => {
                      <h2 className="text-xl font-[700]">{trend.title}</h2>
                      <p className="mt-[.6rem] text-base font-[400] text-[#0000009e]">
                         {trend.description}{" "}
-                        <a href="#" className="font-[700] text-[#0851BD]">
+                        <a href="#" className="font-[700] text-primary-4">
                            Read more
                         </a>
                      </p>

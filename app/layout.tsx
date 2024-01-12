@@ -36,7 +36,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                      <NavBar />
                   </header>
                   <main>{children}</main>
-                  <footer className="w-full bg-black pb-[1.5rem]">
+                  <footer className="w-full bg-primary-4 pb-[1.5rem]">
                      <Footer />
                   </footer>
                   <ToastContainer

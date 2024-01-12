@@ -43,7 +43,7 @@ const FeaturedArticles = () => {
                               {article.time}
                            </span>
                            <h3 className="text-lg font-[700] ">{article.title}</h3>
-                           <span className="text-base font-[700] text-[#0851BD] ">
+                           <span className="text-base font-[700] text-primary-4 ">
                               {article.author}
                            </span>
                         </div>

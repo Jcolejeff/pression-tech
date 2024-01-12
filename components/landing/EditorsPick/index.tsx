@@ -16,7 +16,7 @@ const EditorsPick = () => {
             />
             <div className="flex justify-between">
                <div className="flex gap-6 ">
-                  <button className="rounded-full border border-[#0851BD] px-[2rem] py-[.5rem]">
+                  <button className="rounded-full border border-primary-4 px-[2rem] py-[.5rem]">
                      Tech
                   </button>
                   <button className="rounded-full border bg-[#DDD] px-[2rem] py-[.5rem]">
@@ -38,7 +38,7 @@ const EditorsPick = () => {
                Elon Musk has been a tycoon and business owner whose companies include, the boring
                inc, twitter, spacex and so on the improvement of the vehicles really helped in the
                stock increase...
-               <a href="#" className="font-[700] text-[#0851BD]">
+               <a href="#" className="font-[700] text-primary-4">
                   Read more
                </a>
             </p>
@@ -54,7 +54,7 @@ const EditorsPick = () => {
                Reddit. In a long-awaited update on pricing and features, the manufacturer said that
                they have estimated that the base model will cost US$60,990.{" "}
             </p>
-            <a href="#" className="flex items-center gap-2 text-base font-[400] text-[#0851BD]">
+            <a href="#" className="flex items-center gap-2 text-base font-[400] text-primary-4">
                <span>READ MORE</span>
                <ArrowDownUp />
             </a>

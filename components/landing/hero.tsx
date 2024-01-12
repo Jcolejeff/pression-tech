@@ -17,11 +17,11 @@ const LandingHero = () => {
    return (
       <div className="w-full">
          <section
-            className="mt-20 w-full overflow-hidden border  bg-primary-1 text-white"
-            style={{
-               backgroundImage: `${url("/images/landing/Mask group.svg")}`,
-               backgroundSize: "cover",
-            }}
+            className="mt-20 w-full overflow-hidden border bg-[url('/blog-post-1.jpg')] text-white"
+            // style={{
+            //    backgroundImage: `${url("/images/landing/Mask group.svg")}`,
+            //    backgroundSize: "cover",
+            // }}
          >
             <section className="container  relative w-full max-w-[1700px] border px-container-base py-[3rem] pb-20 md:py-[5rem] md:pb-[7.25rem] md:pt-[6rem] lg:px-container-lg xl:px-container-xl">
                {/* <div className="relative flex w-full flex-col justify-center gap-[2.5rem] border md:gap-[2.75rem]">

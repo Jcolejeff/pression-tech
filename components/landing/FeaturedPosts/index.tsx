@@ -62,7 +62,7 @@ const FeaturedPosts = () => {
                      Dollar rate increases with high margin to naira
                   </h4>
                   <div className="flex flex-col gap-1">
-                     <span className="text-sm font-[700] text-[#0851BD]">Ademola Akeem</span>
+                     <span className="text-sm font-[700] text-primary-4">Ademola Akeem</span>
                      <span className="text-sm font-[400] text-[#00000070]">1 day ago</span>
                   </div>
                </div>

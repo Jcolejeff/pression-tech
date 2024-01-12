@@ -3,13 +3,13 @@ import { capitalizeFirstLetter } from "lib/helpers";
 import { url } from "lib/utils";
 import { FooterLinksData } from "./data";
 
-import { ArrowRight,Facebook, Twitter, Youtube } from "lucide-react";
+import { ArrowRight, Facebook, Twitter, Youtube } from "lucide-react";
 import Link from "next/link";
 interface IFooter {}
 
 const Footer = ({}: IFooter) => {
    return (
-      <div className="container relative  flex w-full  max-w-[1700px] flex-col  bg-[#0851BD] ">
+      <div className="container relative  flex w-full  max-w-[1700px] flex-col  bg-primary-4 ">
          {/* <div className="grid grid-cols-1 gap-[4rem]  border-b  border-b-secondary-8/40 pb-12 md:flex md:justify-between md:gap-[5.57rem] md:pb-[8.29rem]">
             <div className="  flex  flex-col  gap-8  ">
                <div className="">

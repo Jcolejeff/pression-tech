@@ -28,7 +28,7 @@ const Finance = () => {
                         style={{ top: "80%" }}
                      >
                         <div className="flex items-center justify-between">
-                           <span className="text-lg font-[700] text-[#0851BD]">Trade News</span>
+                           <span className="text-lg font-[700] text-primary-4">Trade News</span>
                            <a href="#" className="text-lg text-[#1F2A3766]">
                               <ArrowDown />
                            </a>
@@ -49,7 +49,7 @@ const Finance = () => {
                      This year we focused on verifying our drivers, making sure to know who they
                      are. Next year will be about knowing who our riders are and making sure the
                      platform is safe for both our riders and drivers,” the Country Manager said...
-                     <a href="#" className="font-[700] text-[#0851BD]">
+                     <a href="#" className="font-[700] text-primary-4">
                         Read More..
                      </a>
                   </p>
@@ -69,7 +69,7 @@ const Finance = () => {
                      })}
                   </div>
                </div>
-               <div className="mt-10 text-center text-lg font-[700] text-[#0851BD]">
+               <div className="mt-10 text-center text-lg font-[700] text-primary-4">
                   <a href="#" className="text-center">
                      More on Finance
                   </a>
