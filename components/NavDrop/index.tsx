@@ -16,7 +16,7 @@ import {
 } from "components/ui/navigation-menu";
 import { capitalizeFirstLetter } from "lib/helpers";
 import { url } from "lib/utils";
-import { IoIosSearch } from "react-icons/io";
+import { Search } from "lucide-react";
 interface INavDrop {
    darkNavBg?: boolean;
 }

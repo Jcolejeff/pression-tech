@@ -1,6 +1,7 @@
 import { url } from "@/lib/utils";
 import React from "react";
-import { GoArrowDownRight } from "react-icons/go";
+
+import { ArrowDown } from "lucide-react";
 
 const FeaturedPosts = () => {
    const posts = [
@@ -34,7 +35,7 @@ const FeaturedPosts = () => {
                         </div>
                         <div className="flex gap-[.5rem] font-[700]">
                            <span className="text-xl font-[700]">
-                              <GoArrowDownRight />
+                              <ArrowDown />
                            </span>
                            <h4 className="text-2xl font-[700] ">{post.title}</h4>
                         </div>

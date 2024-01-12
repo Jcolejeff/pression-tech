@@ -12,7 +12,8 @@ import menuDotsOpened from "@/public/svgs/menuDotsOpened.svg";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { IoIosSearch } from "react-icons/io";
+
+import { Search } from "lucide-react";
 
 interface Props {
    darkNavBg?: boolean;
@@ -148,7 +149,7 @@ const NavBar: React.FC<Props> = ({ darkNavBg }) => {
                   <p className="text-sm font-semibold tracking-wider  md:text-[1rem]">Menu</p>
                </div> */}
                <span className="text-[1.2rem] font-[700] text-white">
-                  <IoIosSearch style={{ width: "4rem" }} />
+                  <Search width={"4rem"} />
                </span>
             </div>
             <div className="flex md:hidden">

@@ -2,10 +2,8 @@ import { Input } from "components/ui/input";
 import { capitalizeFirstLetter } from "lib/helpers";
 import { url } from "lib/utils";
 import { FooterLinksData } from "./data";
-import { FaArrowRight } from "react-icons/fa6";
-import { FaFacebook } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
-import { FaYoutube } from "react-icons/fa";
+
+import { ArrowRight,Facebook, Twitter, Youtube } from "lucide-react";
 import Link from "next/link";
 interface IFooter {}
 
@@ -81,7 +79,7 @@ const Footer = ({}: IFooter) => {
                         className="text-lg placeholder-white focus:text-white"
                      />
                      <span className="cursor-pointer border p-[.7rem] text-[.8rem] text-white md:p-[1rem] md:text-[1.5rem]">
-                        <FaArrowRight />
+                        <ArrowRight />
                      </span>
                   </div>
                </div>
@@ -112,13 +110,13 @@ const Footer = ({}: IFooter) => {
          <div className="flex items-center justify-between border-white px-10 md:gap-[62%] md:px-0 lg:px-container-lg xl:px-container-xl">
             <div className="flex gap-6 pb-[4rem] pt-[2rem] md:ml-[3rem] md:border-l lg:ml-[6rem]">
                <Link href="#" className="text-[1.2rem] text-white md:text-[1.5rem]">
-                  <FaFacebook />
+                  <Facebook />
                </Link>
                <Link href="#" className="text-[1.2rem] text-white md:text-[1.5rem]">
-                  <FaTwitter />
+                  <Twitter />
                </Link>
                <Link href="#" className="text-[1.2rem] text-white md:text-[1.5rem]">
-                  <FaYoutube />
+                  <Youtube />
                </Link>
             </div>
             <div className="pb-[4rem] pt-[2rem]">

@@ -13,8 +13,8 @@ const inter = Inter({ subsets: ["latin"] });
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
-   title: "HNG",
-   description: "Start your journey to becoming a world-class developer today!",
+   title: "PressionTech",
+   description: "Get the Best technews!",
 };
 
 interface RootLayoutProps {

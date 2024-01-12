@@ -1,8 +1,8 @@
 import React from "react";
 
-import { IoBookmark } from "react-icons/io5";
 import { url } from "@/lib/utils";
-import { MdOutlineArrowOutward } from "react-icons/md";
+
+import { Bookmark, ArrowDownUp } from "lucide-react";
 
 const EditorsPick = () => {
    return (
@@ -24,7 +24,7 @@ const EditorsPick = () => {
                   </button>
                </div>
                <button className="rounded-full border bg-[#DDD] p-[.7rem] font-[1rem]">
-                  <IoBookmark />
+                  <Bookmark />
                </button>
             </div>
             <h2 className="text-lg font-[700]">
@@ -56,7 +56,7 @@ const EditorsPick = () => {
             </p>
             <a href="#" className="flex items-center gap-2 text-base font-[400] text-[#0851BD]">
                <span>READ MORE</span>
-               <MdOutlineArrowOutward />
+               <ArrowDownUp />
             </a>
          </div>
       </section>

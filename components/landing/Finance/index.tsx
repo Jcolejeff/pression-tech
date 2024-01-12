@@ -1,6 +1,7 @@
 import { url } from "@/lib/utils";
 import React from "react";
-import { MdOutlineArrowOutward } from "react-icons/md";
+
+import { ArrowDown } from "lucide-react";
 
 const Finance = () => {
    const posts = [
@@ -29,7 +30,7 @@ const Finance = () => {
                         <div className="flex items-center justify-between">
                            <span className="text-lg font-[700] text-[#0851BD]">Trade News</span>
                            <a href="#" className="text-lg text-[#1F2A3766]">
-                              <MdOutlineArrowOutward />
+                              <ArrowDown />
                            </a>
                         </div>
                         <h4 className="text-2xl font-[700]">
