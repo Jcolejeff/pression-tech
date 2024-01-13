@@ -70,7 +70,7 @@ const NavBar: React.FC<Props> = ({ darkNavBg }) => {
          <div className="flex w-full items-center justify-between py-[1.2rem] md:pb-[1rem] md:pt-[1.5rem] lg:border-b-secondary-1 xxl:py-8">
             <div className="flex w-full items-center gap-[2.5rem]">
                <a href="/" className="flex items-center gap-4">
-                  <img src={url("/images/logo.svg")} alt="" className="w-8 md:w-10" />
+                  <img src={url("/images/logo.svg")} alt="" className="w-10 " />
                </a>
                {/* <div className="hidden items-center gap-[0.5rem] lg:flex">
                   <NavDrop darkNavBg={darkNavBg} />

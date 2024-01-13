@@ -60,28 +60,25 @@ const ReviewSlide = () => {
 
    const reviews = [
       {
-         img: "https://images.unsplash.com/photo-1509721434272-b79147e0e708?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
-         text: ` “The Timbu Cash Register app is a game-changer for my store. From
-                              quick transactions to detailed sales insights, it's become an integral
-                              part of my business since 2019."`,
-         date: "15 may 2023",
+         img: "/images/landing/latestPosts/post1.svg",
+         text: "US senate warns apple product are been spied",
+         category: "Tech",
       },
       {
-         img: "https://images.unsplash.com/photo-1506710507565-203b9f24669b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1536&q=80",
-         text: ` “It has revolutionized how I manage my transactions. It's not just an app; it's a financial partner. The speed and reliability are unmatched, making it an essential tool for any business owner!`,
-         date: "25 june 2023",
+         img: "/images/landing/latestPosts/post2.svg",
+         text: "US senate warns apple product are been spied",
+         category: "Tech",
       },
       {
-         img: "https://images.unsplash.com/photo-1536987333706-fc9adfb10d91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
-
-         text: ` ”Sending receipts, managing inventory, and managing debts trends have never been smoother. This app is a lifesaver for every cash register out there and I highly it, for small businesses."`,
-         date: " 10 February 2023",
+         img: "/images/landing/editorsPick/e-contract.svg",
+         text: "US senate warns apple product are been spied",
+         category: "Tech",
       },
    ];
 
    return (
-      <section className="flex w-full justify-end  py-20 pb-12">
-         <div className="col-span-2   w-10/12  ">
+      <section className="relative hidden w-full justify-end border-t py-6 pb-12 md:flex">
+         <div className="col-span-2   w-full ">
             <Slide
                // vertical
                arrows={false}
@@ -95,11 +92,8 @@ const ReviewSlide = () => {
             >
                {reviews.map((item, index) => {
                   return (
-                     <article
-                        className="h-fit rounded-[2rem] border px-8 py-6 shadow-lg xl:mx-8 "
-                        key={index}
-                     >
-                        <div className="space-y-2">
+                     <article className="h-fit shadow-lg xl:mx-3" key={index}>
+                        {/* <div className="space-y-2">
                            <div className="flex justify-between">
                               <div className="flex gap-2">
                                  <StarIcon className="w-4 fill-current text-orange-400/80" />
@@ -114,6 +108,25 @@ const ReviewSlide = () => {
                               <p className="text-base font-semibold">{item.text}</p>
                            </div>
                            <p className="text-sm">{item.date}</p>
+                        </div> */}
+                        <div className="bg-white dark:bg-black">
+                           <div className="h-[10rem] min-w-full">
+                              <img src={item.img} alt="" className="h-full w-full object-cover" />
+                           </div>
+                           <div className="flex flex-col gap-4 p-4">
+                              <span className="text-sm font-[700] text-[#00000094] dark:text-[#ffffff94]">
+                                 {item.category}
+                              </span>
+                              <h4 className="text-xl font-[700] text-black dark:text-white">
+                                 {item.text}
+                              </h4>
+                              <a
+                                 href="#"
+                                 className="text-sm text-[#00000078] dark:text-[#ffffff94]"
+                              >
+                                 Read more
+                              </a>
+                           </div>
                         </div>
 
                         {/* <span>Slide {index + 1}</span> */}
@@ -121,7 +134,7 @@ const ReviewSlide = () => {
                   );
                })}
             </Slide>
-            <div className="my-4 flex items-center justify-end gap-6 lg:my-14">
+            <div className="my-4  hidden items-center gap-6 lg:my-14">
                <button
                   className=" rounded-full border border-gray-50/10 bg-slate-200 p-2  transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-sm lg:p-3"
                   type="button"

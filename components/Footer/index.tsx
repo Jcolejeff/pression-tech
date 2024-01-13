@@ -83,7 +83,7 @@ const Footer = ({}: IFooter) => {
                      </span>
                   </div>
                </div>
-               <div className="mt-10 md:flex">
+               <div className="mt-10 gap-10 md:flex">
                   <p className="w-full text-[1rem] font-[400] text-white md:text-lg">
                      TechCabal is a future-focused publication that speaks to African innovation and
                      technology in depth

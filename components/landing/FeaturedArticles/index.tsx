@@ -24,13 +24,16 @@ const FeaturedArticles = () => {
    ];
 
    return (
-      <section className="container w-full max-w-[1700px] border-t border-[#000] px-container-base py-[3rem] lg:px-container-lg xl:px-container-xl">
+      <section className="container w-full max-w-[1700px] border-t border-[#000] px-container-base py-[3rem] dark:border-white lg:px-container-lg xl:px-container-xl">
          <h4 className="text-lg font-[700]">Featured articles</h4>
          <div className="mt-6 grid-cols-2 gap-20 md:grid">
             <div className=" flex flex-col gap-10">
                {articles.map((article, index) => {
                   return (
-                     <div key={index} className="flex gap-6 border-b border-[#0000008f] py-8">
+                     <div
+                        key={index}
+                        className="flex gap-6 border-b border-[#0000008f] py-8 dark:border-white"
+                     >
                         <div className="h-full min-w-[40%] max-w-[40%]">
                            <img
                               src={article.image}
@@ -39,7 +42,7 @@ const FeaturedArticles = () => {
                            />
                         </div>
                         <div className="flex max-w-fit flex-col gap-5">
-                           <span className="text-sm font-[700] text-[#00000080]">
+                           <span className="text-sm font-[700] text-[#00000080] dark:text-white">
                               {article.time}
                            </span>
                            <h3 className="text-lg font-[700] ">{article.title}</h3>
@@ -61,7 +64,7 @@ const FeaturedArticles = () => {
                <h2 className="text-xl font-[700]">
                   Meta launches a stand alone AI powered image generator
                </h2>
-               <p className="text-base font-[400] text-[#0000009e]">
+               <p className="text-base font-[400] text-[#0000009e] dark:text-white">
                   Not to be outdone by Google’s Gemini launch, Meta’s rolling out a new, standalone
                   generative AI experience on the web, Imagine with Meta, that allows users to
                   create images by describing them in natural language. Similar to OpenAI’s DALL-E,
@@ -70,7 +73,9 @@ const FeaturedArticles = () => {
                   prompts. It’s free to use (at least for now) for users in the U.S. and generates
                   four images per prompt.
                </p>
-               <span className="text-sm font-[700] text-[#000]">34 Minutes ago</span>
+               <span className="text-sm font-[700] text-[#000] dark:text-white">
+                  34 Minutes ago
+               </span>
                <div className="mt-[3rem] flex w-full items-center justify-center bg-[#D9D9D9] py-[2rem]">
                   <h3 className="text-lg font-[700] uppercase">Avertisement</h3>
                </div>

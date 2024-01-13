@@ -15,7 +15,7 @@ const Finance = () => {
       },
    ];
    return (
-      <section className="container max-w-[1700px] border-t border-[#000] px-container-base py-[3rem] lg:px-container-lg xl:px-container-xl">
+      <section className="container max-w-[1700px] border-t border-[#000] px-container-base py-[3rem] dark:border-white lg:px-container-lg xl:px-container-xl">
          <div className="general grid-cols-4 gap-10 md:grid">
             <div className="first relative col-span-2">
                <h4 className="text-lg font-[700]">Finance</h4>
@@ -24,22 +24,22 @@ const Finance = () => {
                      <img src={url("/images/landing/sections/dollar-rate.svg")} />
 
                      <div
-                        className="absolute flex max-w-[70%] flex-col gap-3 bg-white p-4 md:max-w-[55%]"
+                        className="absolute flex max-w-[70%] flex-col gap-3 bg-white p-4 dark:bg-black md:max-w-[55%]"
                         style={{ top: "80%" }}
                      >
                         <div className="flex items-center justify-between">
                            <span className="text-lg font-[700] text-primary-4">Trade News</span>
-                           <a href="#" className="text-lg text-[#1F2A3766]">
+                           <a href="#" className="text-lg text-[#1F2A3766] dark:text-white">
                               <ArrowDown />
                            </a>
                         </div>
-                        <h4 className="text-2xl font-[700]">
+                        <h4 className="text-2xl font-[700] ">
                            Dollar rate increases with high margin to naira
                         </h4>
                      </div>
                   </div>
                </div>
-               <div className="relative mt-[12rem] sm:mt-[12rem] lg:mt-[7rem]">
+               <div className="relative mt-[12rem] dark:text-[#d9d9d9b3] sm:mt-[12rem] lg:mt-[7rem]">
                   <p>
                      Establishing commercial markets on the moon is going to require thinking a
                      little differently. That’s DARPA’s hunch, anyway. DARPA (Defense Advanced
@@ -56,7 +56,7 @@ const Finance = () => {
                </div>
             </div>
             <div className="second col-span-1 mt-10 md:mt-0 ">
-               <div className="h-fit border-black px-6 md:border-l md:border-r">
+               <div className="h-fit border-black px-6 dark:border-white md:border-l md:border-r">
                   <h4 className="text-lg font-[700]">Related Post</h4>
                   <div className="mt-6 flex flex-col gap-10">
                      {posts.map((post, index) => {

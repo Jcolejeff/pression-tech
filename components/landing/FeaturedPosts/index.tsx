@@ -22,7 +22,7 @@ const FeaturedPosts = () => {
       },
    ];
    return (
-      <section className="container  max-w-[1700px] border-t border-[#000] px-container-base py-[3rem] lg:px-container-lg xl:px-container-xl">
+      <section className="container  max-w-[1700px] border-t border-[#000] px-container-base py-[3rem] dark:border-white lg:px-container-lg xl:px-container-xl">
          <h4 className="text-lg font-[700]">Featured Post</h4>
          <div className="mb-52 mt-6 gap-10 md:mb-40 md:flex">
             <div className="left flex w-full flex-col gap-8">
@@ -43,14 +43,14 @@ const FeaturedPosts = () => {
                   );
                })}
             </div>
-            <div className="relative mt-10 flex h-full w-full flex-col gap-6 border md:mt-0">
+            <div className="relative mt-10 flex h-full w-full flex-col gap-6 md:mt-0">
                <img src={url("/images/landing/sections/dollar-rate.svg")} className="h-full" />
 
                <div
-                  className="absolute flex max-w-[70%] flex-col gap-3 bg-white p-8"
+                  className="absolute left-[10%] top-[70%] flex max-w-[80%] flex-col gap-3 bg-white p-4  dark:bg-black md:left-[15%] md:max-w-[70%] md:p-8"
                   style={{
-                     top: "70%",
-                     left: "15%",
+                     // top: "70%",
+                     // left: "15%",
                      boxShadow: "-11px 18px 11.3px 0px rgba(111, 100, 100, 0.25)",
                   }}
                >

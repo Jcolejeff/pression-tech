@@ -6,10 +6,10 @@ const Newsletter = () => {
       <section className="container hidden max-w-[1700px] border-t border-[#000] px-container-base py-[3rem] md:block lg:px-container-lg xl:px-container-xl">
          <div className="border bg-[#D8DCE1] py-24 md:px-20 lg:px-40">
             <div className="flex w-full justify-between">
-               <p className="w-full text-xl font-[400]">
+               <p className="w-full text-xl font-[400] dark:text-black">
                   Susbcribe to our <br /> <span className="text-4xl ">Newsletter</span>
                </p>
-               <p className="text-lg">
+               <p className="text-lg dark:text-black">
                   Be the first to receive daily post, News, software update and tech related
                   articles directly to your mail daily
                </p>

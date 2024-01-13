@@ -65,7 +65,7 @@ const NavDrop = ({ darkNavBg }: INavDrop) => {
                   <NavigationMenuTrigger>Tech</NavigationMenuTrigger>
                   <NavigationMenuContent>
                      <ul className="grid w-[400px] list-none gap-3 p-4 md:w-[500px] md:grid-cols-2  lg:w-[600px]">
-                        {components.map((component) => (
+                        {/* {components.map((component) => (
                            <ListItem
                               key={component.title}
                               title={component.title}
@@ -73,7 +73,7 @@ const NavDrop = ({ darkNavBg }: INavDrop) => {
                            >
                               {component.description}
                            </ListItem>
-                        ))}
+                        ))} */}
                      </ul>
                   </NavigationMenuContent>
                </NavigationMenuItem>
