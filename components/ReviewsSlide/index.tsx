@@ -12,14 +12,14 @@ const ReviewSlide = () => {
          breakpoint: 800,
          settings: {
             slidesToShow: 3,
-            slidesToScroll: 2,
+            slidesToScroll: 1,
          },
       },
       {
          breakpoint: 600,
          settings: {
             slidesToShow: 3,
-            slidesToScroll: 2,
+            slidesToScroll: 1,
          },
       },
       {
@@ -74,6 +74,21 @@ const ReviewSlide = () => {
          text: "US senate warns apple product are been spied",
          category: "Tech",
       },
+      {
+         img: "/images/landing/latestPosts/post1.svg",
+         text: "US senate warns apple product are been spied",
+         category: "Tech",
+      },
+      {
+         img: "/images/landing/latestPosts/post2.svg",
+         text: "US senate warns apple product are been spied",
+         category: "Tech",
+      },
+      {
+         img: "/images/landing/editorsPick/e-contract.svg",
+         text: "US senate warns apple product are been spied",
+         category: "Tech",
+      },
    ];
 
    return (
@@ -82,6 +97,8 @@ const ReviewSlide = () => {
             <Slide
                // vertical
                arrows={false}
+               autoplay={true}
+               duration={2000}
                ref={slideRef}
                slidesToScroll={1}
                slidesToShow={3}
@@ -92,7 +109,7 @@ const ReviewSlide = () => {
             >
                {reviews.map((item, index) => {
                   return (
-                     <article className="h-fit shadow-lg xl:mx-3" key={index}>
+                     <article className="h-fit shadow-lg md:mx-3" key={index}>
                         {/* <div className="space-y-2">
                            <div className="flex justify-between">
                               <div className="flex gap-2">
