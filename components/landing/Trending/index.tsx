@@ -1,3 +1,4 @@
+import Heading from "@/components/Heading";
 import React from "react";
 
 const Trending = () => {
@@ -48,7 +49,7 @@ const Trending = () => {
 
    return (
       <section className="container w-full max-w-[1700px] border-t border-[#000] px-container-base py-[3rem] dark:border-white lg:px-container-lg xl:px-container-xl">
-         <h4 className="text-lg font-[700]">Trending in Africa tech space</h4>
+         <Heading title="Trending in Africa tech space" />
          <div className="mt-6 grid-cols-3 items-start gap-12 md:grid">
             {trends.map((trend, index) => {
                return (

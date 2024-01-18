@@ -1,3 +1,4 @@
+import Heading from "@/components/Heading";
 import { url } from "@/lib/utils";
 import React from "react";
 
@@ -25,29 +26,29 @@ const FeaturedArticles = () => {
 
    return (
       <section className="container w-full max-w-[1700px] border-t border-[#000] px-container-base py-[3rem] dark:border-white lg:px-container-lg xl:px-container-xl">
-         <h4 className="text-lg font-[700]">Featured articles</h4>
+         <Heading title="Featured articles" />
          <div className="mt-6 grid-cols-2 gap-20 md:grid">
             <div className=" flex flex-col gap-10">
-               {articles.map((article, index) => {
+               {articles.map((item, index) => {
                   return (
                      <div
                         key={index}
-                        className="flex gap-6 border-b border-[#0000008f] py-8 dark:border-white"
+                        className="flex gap-6   border-b border-[#0000008f] py-8 dark:border-white "
                      >
-                        <div className="h-full min-w-[40%] max-w-[40%]">
+                        <div className="h-full min-w-[40%] max-w-[40%] ">
                            <img
-                              src={article.image}
-                              alt={article.author}
+                              src={item.image}
+                              alt={item.author}
                               className="max-h-full min-h-full w-full"
                            />
                         </div>
                         <div className="flex max-w-fit flex-col gap-5">
                            <span className="text-sm font-[700] text-[#00000080] dark:text-white">
-                              {article.time}
+                              {item.time}
                            </span>
-                           <h3 className="text-lg font-[700] ">{article.title}</h3>
+                           <h3 className="text-lg font-[700] ">{item.title}</h3>
                            <span className="text-base font-[700] text-primary-4 ">
-                              {article.author}
+                              {item.author}
                            </span>
                         </div>
                      </div>

@@ -5,6 +5,7 @@ import "react-slideshow-image/dist/styles.css";
 import { useRef } from "react";
 import { url } from "lib/utils";
 import { RatIcon, StarIcon, Stars } from "lucide-react";
+import Heading from "@/components/Heading";
 
 const LatestPosts = () => {
    //    const slideRef = useRef<SlideshowRef>(null);
@@ -167,7 +168,7 @@ const LatestPosts = () => {
       //      </div>
       //   </section>
       <section className="container flex max-w-[1700px] flex-col gap-6 px-container-base py-[3rem] lg:px-container-lg xl:px-container-xl">
-         <h4 className="font-[700]">Latest Post</h4>
+         <Heading title="Latest Post" />
          <div className="grid gap-10 md:grid-cols-3">
             {posts.map((post, index) => {
                return (
