@@ -126,7 +126,7 @@ const NavDrop = ({ darkNavBg }: INavDrop) => {
                   <span
                      className={` block cursor-pointer px-4  font-[700] leading-[1.5rem]  tracking-[0.005rem] text-white lg:text-[1rem] `}
                   >
-                     <a href={url("/#features")}>TechTv</a>
+                     <a href={url("/techTv")}>TechTv</a>
                   </span>
                </NavigationMenuItem>
                <NavigationMenuItem>

@@ -48,7 +48,7 @@ const Trending = () => {
    ];
 
    return (
-      <section className="container w-full max-w-[1700px] border-t border-[#000] px-container-base py-[3rem] dark:border-white lg:px-container-lg xl:px-container-xl">
+      <section className="container w-full max-w-[1700px] border-b border-t border-[#000] px-container-base py-[3rem] dark:border-white lg:px-container-lg xl:px-container-xl">
          <Heading title="Trending in Africa tech space" />
          <div className="mt-6 grid-cols-3 items-start gap-12 md:grid">
             {trends.map((trend, index) => {
