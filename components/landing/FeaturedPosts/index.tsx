@@ -2,6 +2,7 @@ import { url } from "@/lib/utils";
 import React from "react";
 
 import { ArrowDown } from "lucide-react";
+import Heading from "@/components/Heading";
 
 const FeaturedPosts = () => {
    const posts = [
@@ -23,7 +24,7 @@ const FeaturedPosts = () => {
    ];
    return (
       <section className="container  max-w-[1700px] border-t border-[#000] px-container-base py-[3rem] dark:border-white lg:px-container-lg xl:px-container-xl">
-         <h4 className="text-lg font-[700]">Featured Post</h4>
+         <Heading title="Featured Post" />
          <div className="mb-52 mt-6 gap-10 md:mb-40 md:flex">
             <div className="left flex w-full flex-col gap-8">
                {posts.map((post, index) => {

@@ -148,7 +148,7 @@ const NavBar: React.FC<Props> = ({ darkNavBg }) => {
                {/* <div className="flex items-center justify-center rounded-full bg-white md:px-6 md:py-3">
                   <p className="text-sm font-semibold tracking-wider  md:text-[1rem]">Menu</p>
                </div> */}
-               <span className="text-[1.2rem] font-[700] text-white">
+               <span className="p-initial border-l text-[1.2rem] font-[700] text-white">
                   <Search width={"4rem"} />
                </span>
             </div>

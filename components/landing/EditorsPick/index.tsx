@@ -3,12 +3,13 @@ import React from "react";
 import { url } from "@/lib/utils";
 
 import { Bookmark, ArrowDownUp } from "lucide-react";
+import Heading from "@/components/Heading";
 
 const EditorsPick = () => {
    return (
       <section className="container w-full max-w-[1700px] grid-cols-3 gap-20 border-t border-[#000] px-container-base py-[3rem] dark:border-white md:grid lg:px-container-lg xl:px-container-xl">
          <div className="col-span-2 flex flex-col gap-6 ">
-            <h4 className="text-lg font-[700]">Editor’s pick</h4>
+            <Heading title="Editor's pick" />
             <img
                src={url("/images/landing/editorsPick/automobiles.svg")}
                alt="automobiles"

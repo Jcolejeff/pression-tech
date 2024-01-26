@@ -2,6 +2,7 @@ import { url } from "@/lib/utils";
 import React from "react";
 
 import { ArrowDown } from "lucide-react";
+import Heading from "@/components/Heading";
 
 const Finance = () => {
    const posts = [
@@ -18,7 +19,7 @@ const Finance = () => {
       <section className="container max-w-[1700px] border-t border-[#000] px-container-base py-[3rem] dark:border-white lg:px-container-lg xl:px-container-xl">
          <div className="general grid-cols-4 gap-10 md:grid">
             <div className="first relative col-span-2">
-               <h4 className="text-lg font-[700]">Finance</h4>
+               <Heading title="Finance" />
                <div className="relative">
                   <div className=" mt-6 flex flex-col gap-6">
                      <img src={url("/images/landing/sections/dollar-rate.svg")} />
@@ -57,7 +58,7 @@ const Finance = () => {
             </div>
             <div className="second col-span-1 mt-10 md:mt-0 ">
                <div className="h-fit border-black px-6 dark:border-white md:border-l md:border-r">
-                  <h4 className="text-lg font-[700]">Related Post</h4>
+                  <Heading title="Related Post" />
                   <div className="mt-6 flex flex-col gap-10">
                      {posts.map((post, index) => {
                         return (

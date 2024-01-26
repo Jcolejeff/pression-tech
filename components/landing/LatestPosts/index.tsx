@@ -5,6 +5,8 @@ import "react-slideshow-image/dist/styles.css";
 import { useRef } from "react";
 import { url } from "lib/utils";
 import { RatIcon, StarIcon, Stars } from "lucide-react";
+import Heading from "@/components/Heading";
+import Related from "@/components/Related";
 
 const LatestPosts = () => {
    //    const slideRef = useRef<SlideshowRef>(null);
@@ -80,20 +82,6 @@ const LatestPosts = () => {
    //       },
    //    ];
 
-   const posts = [
-      {
-         image: "/images/landing/latestPosts/post1.svg",
-         text: "Tesla Newly cybertruck amazed citizen with it AI features",
-      },
-      {
-         image: "/images/landing/latestPosts/post2.svg",
-         text: "Tesla Newly cybertruck amazed citizen with it AI features",
-      },
-      {
-         image: "/images/landing/latestPosts/post1.svg",
-         text: "Tesla Newly cybertruck amazed citizen with it AI features",
-      },
-   ];
    return (
       //   <section className="py-20 pb-12  lg:grid lg:grid-cols-3  lg:gap-8">
       //      <div className="   mb-8 h-fit rounded-2xl lg:mb-0 ">
@@ -167,17 +155,8 @@ const LatestPosts = () => {
       //      </div>
       //   </section>
       <section className="container flex max-w-[1700px] flex-col gap-6 px-container-base py-[3rem] lg:px-container-lg xl:px-container-xl">
-         <h4 className="font-[700]">Latest Post</h4>
-         <div className="grid gap-10 md:grid-cols-3">
-            {posts.map((post, index) => {
-               return (
-                  <div key={index} className="flex flex-col gap-2">
-                     <img src={post.image} className="w-full" />
-                     <p className="text-lg font-[700]">{post.text}</p>
-                  </div>
-               );
-            })}
-         </div>
+         <Heading title="Latest Post" />
+         <Related />
       </section>
    );
 };
