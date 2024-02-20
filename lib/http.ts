@@ -1,4 +1,7 @@
 import axios from "axios";
+import WordPress from "wpapi";
+
+export const wordPressInstance = new WordPress({ endpoint: "https://techpression.com/wp-json" });
 
 const API_URL = "https://api.timbu.com/";
 
