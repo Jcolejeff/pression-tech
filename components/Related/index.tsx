@@ -1,4 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
+import Link from "next/link";
 import React from "react";
+
 
 const Related = () => {
    const posts = [
@@ -20,10 +23,10 @@ const Related = () => {
          <div className="grid gap-10 md:grid-cols-3">
             {posts.map((post, index) => {
                return (
-                  <div key={index} className="flex flex-col gap-2">
-                     <img src={post.image} className="w-full" />
+                  <Link href='/articles'  key={index} className="flex flex-col gap-2">
+                     <img src={post.image} alt="blog img" className="w-full" />
                      <p className="text-lg font-[700]">{post.text}</p>
-                  </div>
+                  </Link>
                );
             })}
          </div>
