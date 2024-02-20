@@ -7,16 +7,11 @@ import { url } from "@/lib/utils";
 import ReviewSlide from "@/components/ReviewsSlide";
 import { Input } from "../ui/input";
 import { Search } from "lucide-react";
+import { wordPressInstance } from "@/lib/http";
 
-const LandingHero = () => {
-   const images = [
-      "/images/landing/buffer.svg",
-      "/images/landing/stripe.svg",
-      "/images/landing/netflix.svg",
-      "/images/landing/dropbox.svg",
-      "/images/landing/hub.svg",
-      "/images/landing/framer.svg",
-   ];
+const LandingHero = async () => {
+   const heroData = await wordPressInstance.posts().perPage(7).page(1).embed();
+
    return (
       <div className="w-full">
          <section className="bg mt-20 w-full overflow-hidden bg-[url('/herobg3.jpg')]  bg-cover bg-center bg-no-repeat text-white md:bg-[url('/herobg2.jpg')]">
