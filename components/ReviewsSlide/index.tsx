@@ -114,10 +114,10 @@ const ReviewSlide = ({ heroData }: { heroData: any }) => {
                   return (
                      <Link
                         href={`/${item?.slug}`}
-                        className="block h-fit shadow-lg md:mx-3"
+                        className="block h-[22rem] shadow-lg md:mx-3"
                         key={index}
                      >
-                        <div className="bg-white  dark:bg-black">
+                        <div className="h-full  bg-white dark:bg-black">
                            <div className="h-[10rem] min-w-full">
                               <img
                                  src={item?.jetpack_featured_media_url}
@@ -125,7 +125,7 @@ const ReviewSlide = ({ heroData }: { heroData: any }) => {
                                  className="h-full w-full object-cover"
                               />
                            </div>
-                           <div className="flex flex-col gap-4 p-4">
+                           <div className="flex h-full flex-col gap-4 p-4">
                               <span className="text-xs font-[700] text-[#00000094] dark:text-[#ffffff94]">
                                  {item?._embedded["wp:term"][0][0]?.name}
                               </span>

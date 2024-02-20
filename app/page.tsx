@@ -19,14 +19,27 @@ import { Input } from "@/components/ui/input";
 import { wordPressInstance } from "@/lib/http";
 export default async function Home() {
    const heroData = await wordPressInstance.posts().perPage(7).page(1).embed();
+   const LatestPostsData = await wordPressInstance.posts().perPage(3).page(1).embed().offset(7);
+   const editorsPickData = await wordPressInstance
+      .posts()
+      .categories(99)
+      .perPage(3)
+      .page(1)
+      .embed();
+   const featuredArticlesData = await wordPressInstance
+      .posts()
+      .categories(16)
+      .perPage(4)
+      .page(1)
+      .embed();
 
    return (
       <div className="h-full w-full">
          <LandingHero heroData={heroData} />
 
-         <LatestPosts />
-         <EditorsPick />
-         <FeaturedArticles />
+         <LatestPosts latestPostsData={LatestPostsData} />
+         <EditorsPick editorsPickData={editorsPickData} />
+         <FeaturedArticles featuredArticlesData={featuredArticlesData} />
          <Trending />
          <Newsletter />
          <Finance />

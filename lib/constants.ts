@@ -158,3 +158,7 @@ export const users = [
       lastLogin: "-",
    },
 ];
+
+export const findAuthorName = (authorId: number) => {
+   return users.find((user) => user.userId === authorId)?.name;
+};

@@ -1,8 +1,11 @@
+/* eslint-disable @next/next/no-img-element */
 import Heading from "@/components/Heading";
 import { url } from "@/lib/utils";
 import React from "react";
+import { findAuthorName, users } from "@/lib/constants";
+import Link from "next/link";
 
-const FeaturedArticles = () => {
+const FeaturedArticles = ({ featuredArticlesData }: { featuredArticlesData: any }) => {
    const articles = [
       {
          image: "/images/landing/editorsPick/e-signature.svg",
@@ -29,54 +32,57 @@ const FeaturedArticles = () => {
          <Heading title="Featured articles" />
          <div className="mt-6 grid-cols-2 gap-20 md:grid">
             <div className=" flex flex-col gap-10">
-               {articles.map((item, index) => {
+               {featuredArticlesData?.slice(0, 3)?.map((item: any, index: any) => {
                   return (
-                     <div
+                     <Link
+                        href={`/${item?.slug}`}
                         key={index}
                         className="flex gap-6   border-b border-[#0000008f] py-8 dark:border-white "
                      >
                         <div className="h-full min-w-[40%] max-w-[40%] ">
                            <img
-                              src={item.image}
-                              alt={item.author}
+                              src={item?.jetpack_featured_media_url}
+                              alt={findAuthorName(item.author)}
                               className="max-h-full min-h-full w-full"
                            />
                         </div>
                         <div className="flex max-w-fit flex-col gap-5">
                            <span className="text-sm font-[700] text-[#00000080] dark:text-white">
-                              {item.time}
+                              {item?.date}
                            </span>
-                           <h3 className="text-lg font-[700] ">{item.title}</h3>
+                           <h3 className="text-lg font-[700] ">{item?.title?.rendered}</h3>
+
                            <span className="text-base font-[700] text-primary-4 ">
-                              {item.author}
+                              {findAuthorName(item.author)}
                            </span>
                         </div>
-                     </div>
+                     </Link>
                   );
                })}
             </div>
             <div className="mt-10 flex flex-col gap-8 md:mt-0">
                <div className="w-full">
                   <img
-                     src={url("/images/landing/editorsPick/meta-brands.svg")}
+                     src={featuredArticlesData[3]?.jetpack_featured_media_url}
                      className="w-full"
+                     alt=""
                   />
                </div>
-               <h2 className="text-xl font-[700]">
-                  Meta launches a stand alone AI powered image generator
-               </h2>
-               <p className="text-base font-[400] text-[#0000009e] dark:text-white">
-                  Not to be outdone by Google’s Gemini launch, Meta’s rolling out a new, standalone
-                  generative AI experience on the web, Imagine with Meta, that allows users to
-                  create images by describing them in natural language. Similar to OpenAI’s DALL-E,
-                  Midjourney and Stable Diffusion, Imagine with Meta, which is powered by Meta’s
-                  existing Emu image generation model, creates high-resolution images from text
-                  prompts. It’s free to use (at least for now) for users in the U.S. and generates
-                  four images per prompt.
-               </p>
+               <h2 className="text-xl font-[700]">{featuredArticlesData[3]?.title?.rendered}</h2>
+               <p
+                  className="text-base font-[400] text-[#0000009e] dark:text-white"
+                  dangerouslySetInnerHTML={{ __html: featuredArticlesData[3]?.excerpt?.rendered }}
+               />
+
                <span className="text-sm font-[700] text-[#000] dark:text-white">
-                  34 Minutes ago
+                  {featuredArticlesData[3]?.date}
                </span>
+               <Link
+                  href={`/${featuredArticlesData[3]?.slug}`}
+                  className="font-[700] text-primary-4"
+               >
+                  Read more
+               </Link>
                <div className="mt-[3rem] flex w-full items-center justify-center bg-[#D9D9D9] py-[2rem]">
                   <h3 className="text-lg font-[700] uppercase">Avertisement</h3>
                </div>
