@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { Slide, SlideshowRef } from "react-slideshow-image";
 import "./slide.css";
@@ -5,7 +6,10 @@ import "react-slideshow-image/dist/styles.css";
 import { useRef } from "react";
 import { url } from "lib/utils";
 import { RatIcon, StarIcon, Stars, ArrowLeft, ArrowRight } from "lucide-react";
-const ReviewSlide = () => {
+import { log } from "console";
+import Link from "next/link";
+const ReviewSlide = ({ heroData }: { heroData: any }) => {
+   console.log(heroData);
    const slideRef = useRef<SlideshowRef>(null);
    const responsiveSettings = [
       {
@@ -107,9 +111,13 @@ const ReviewSlide = () => {
                {...properties}
                responsive={responsiveSettings}
             >
-               {reviews.map((item, index) => {
+               {heroData?.map((item: any, index: number) => {
                   return (
-                     <article className="h-fit shadow-lg md:mx-3" key={index}>
+                     <Link
+                        href={`/${item?.slug}`}
+                        className="block h-fit shadow-lg md:mx-3"
+                        key={index}
+                     >
                         {/* <div className="space-y-2">
                            <div className="flex justify-between">
                               <div className="flex gap-2">
@@ -126,28 +134,32 @@ const ReviewSlide = () => {
                            </div>
                            <p className="text-sm">{item.date}</p>
                         </div> */}
-                        <div className="bg-white dark:bg-black">
+                        <div className="bg-white  dark:bg-black">
                            <div className="h-[10rem] min-w-full">
-                              <img src={item.img} alt="" className="h-full w-full object-cover" />
+                              <img
+                                 src={item?.jetpack_featured_media_url}
+                                 alt=""
+                                 className="h-full w-full object-cover"
+                              />
                            </div>
                            <div className="flex flex-col gap-4 p-4">
-                              <span className="text-sm font-[700] text-[#00000094] dark:text-[#ffffff94]">
-                                 {item.category}
+                              <span className="text-xs font-[700] text-[#00000094] dark:text-[#ffffff94]">
+                                 {item?._embedded["wp:term"][0][0]?.name}
                               </span>
-                              <h4 className="text-xl font-[700] text-black dark:text-white">
-                                 {item.text}
+                              <h4 className="text-lg font-[700] text-black dark:text-white">
+                                 {item?.title?.rendered}
                               </h4>
-                              <a
-                                 href="#"
+                              <Link
+                                 href={`/${item?.slug}`}
                                  className="text-sm text-[#00000078] dark:text-[#ffffff94]"
                               >
                                  Read more
-                              </a>
+                              </Link>
                            </div>
                         </div>
 
                         {/* <span>Slide {index + 1}</span> */}
-                     </article>
+                     </Link>
                   );
                })}
             </Slide>

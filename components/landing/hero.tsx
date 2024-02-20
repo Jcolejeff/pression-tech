@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import LogoMarquee from "../LogoSlide";
 import Image from "next/image";
@@ -8,10 +9,10 @@ import ReviewSlide from "@/components/ReviewsSlide";
 import { Input } from "../ui/input";
 import { Search } from "lucide-react";
 import { wordPressInstance } from "@/lib/http";
+import { get } from "http";
+import Link from "next/link";
 
-const LandingHero = async () => {
-   const heroData = await wordPressInstance.posts().perPage(7).page(1).embed();
-
+const LandingHero = ({ heroData }: { heroData: any }) => {
    return (
       <div className="w-full">
          <section className="bg mt-20 w-full overflow-hidden bg-[url('/herobg3.jpg')]  bg-cover bg-center bg-no-repeat text-white md:bg-[url('/herobg2.jpg')]">
@@ -26,20 +27,19 @@ const LandingHero = async () => {
                </div>
 
                <div className=" mt-10 md:max-w-[50%]">
-                  <h4 className="text-[1.2rem] font-[700]">Science</h4>
-                  <h2 className="mt-2 text-[2rem]">
-                     Artificial intelligence taking over with astonishing image generator, gained
-                     more awareness in non-fungible token
-                  </h2>
+                  <h4 className="text-[1.2rem] font-[700]">
+                     {heroData[0]?._embedded["wp:term"][0][0]?.name}
+                  </h4>
+                  <h2 className="mt-2 text-[2rem]">{heroData[0]?.title?.rendered}</h2>
                </div>
-               <div className="mt-10">
+               <Link href={`/${heroData[0]?.slug}`} className="mt-10 block">
                   <span className=" border p-[1rem]">
                      <a>Continue Reading</a>
                   </span>
-               </div>
+               </Link>
                <div className="relative ml-[30%] mt-[-4rem] hidden flex-col md:flex">
                   <h4 className="mb-3 pl-3 text-base font-[700] uppercase">Hot news</h4>
-                  <ReviewSlide />
+                  <ReviewSlide heroData={heroData?.slice(1)} />
                </div>
             </section>
          </section>
