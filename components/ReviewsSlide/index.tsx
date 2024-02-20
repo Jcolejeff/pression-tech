@@ -9,7 +9,6 @@ import { RatIcon, StarIcon, Stars, ArrowLeft, ArrowRight } from "lucide-react";
 import { log } from "console";
 import Link from "next/link";
 const ReviewSlide = ({ heroData }: { heroData: any }) => {
-   console.log(heroData);
    const slideRef = useRef<SlideshowRef>(null);
    const responsiveSettings = [
       {
@@ -118,22 +117,6 @@ const ReviewSlide = ({ heroData }: { heroData: any }) => {
                         className="block h-fit shadow-lg md:mx-3"
                         key={index}
                      >
-                        {/* <div className="space-y-2">
-                           <div className="flex justify-between">
-                              <div className="flex gap-2">
-                                 <StarIcon className="w-4 fill-current text-orange-400/80" />
-                                 <StarIcon className="w-4 fill-current text-orange-400/80" />
-                                 <StarIcon className="w-4 fill-current text-orange-400/80" />
-                                 <StarIcon className="w-4 fill-current text-orange-400/80" />
-                                 <StarIcon className="w-4 fill-current text-orange-400/80" />
-                              </div>
-                              <img src={item.img} alt="" className="h-10 w-10 rounded-full" />
-                           </div>
-                           <div>
-                              <p className="text-base font-semibold">{item.text}</p>
-                           </div>
-                           <p className="text-sm">{item.date}</p>
-                        </div> */}
                         <div className="bg-white  dark:bg-black">
                            <div className="h-[10rem] min-w-full">
                               <img
