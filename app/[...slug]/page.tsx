@@ -12,6 +12,30 @@ interface Props {
 const Articles = async ({ params }: Props) => {
    const { slug } = params;
    console.log(slug[0]);
+   // const req = await fetch("https://techpression.com/wp-json/wp/v2/posts/24713");
+   // const data = await req.json();
+   // console.log("data", data);
+   // wordPressInstance
+   //    .posts()
+   //    .perPage(5)
+   //    .page(1)
+   //    .embed()
+   //    .param("_fields", [
+   //       "id",
+   //       "title",
+   //       "content",
+   //       "jetpack_featured_media_url",
+   //       "excerpt",
+   //       "slug",
+   //       "date",
+   //       "author",
+   //       "categories",
+   //       "tags",
+   //    ])
+   //    .then(function (data) {
+   //       console.log(data);
+   //    });
+   // const data = await wordPressInstance.posts().slug(params.slug[0]);
 
    return (
       <div className="container mt-24 min-h-screen w-full max-w-[1700px]   bg-transparent">
