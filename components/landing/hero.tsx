@@ -29,25 +29,7 @@ const LandingHero = () => {
                   />
                   <Search width={"3rem"} />
                </div>
-               {/* <div className="relative flex w-full flex-col justify-center gap-[2.5rem] border md:gap-[2.75rem]">
-                  <div className="flex flex-col items-center justify-center gap-6 2xl:gap-8">
-                     <h1 className="text-center  text-[2.3rem] font-[700] uppercase leading-[130%] tracking-[0.02rem] transition-all duration-500 ease-in-out md:max-w-[60rem] md:text-[4.4rem] md:leading-[5rem] md:tracking-[0.0225rem] lg:ml-[-0.2rem]">
-                        we equip Techies With hands-on experience!
-                     </h1>
 
-                     <h2 className=" max-w-[48.875rem] text-center text-[0.7rem] font-[500] leading-[1.5rem] md:text-[0.8rem] md:leading-[1.5rem] xxl:max-w-[55.875rem] xxl:text-[0.9rem]">
-                        We offer a transformative 2-month internship, where we amplify skills,
-                        cultivate networks, and immerse participants in real projects. Tailored for
-                        those with prior knowledge, its a hands-on journey to practical expertise.
-                     </h2>
-                     <div className="flex items-center gap-4 rounded-full bg-white px-6 py-3">
-                        <p className="text-sm font-[500] text-black md:text-sm">
-                           Scroll to Learn More!
-                        </p>
-                        <Image src={arrowImg} alt="" />
-                     </div>
-                  </div>
-               </div> */}
                <div className=" mt-10 md:max-w-[50%]">
                   <h4 className="text-[1.2rem] font-[700]">Science</h4>
                   <h2 className="mt-2 text-[2rem]">
