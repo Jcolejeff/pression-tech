@@ -17,17 +17,13 @@ const LatestPosts = ({ latestPostsData }: { latestPostsData: any }) => {
          <div className="grid gap-10 md:grid-cols-3">
             {latestPostsData?.map((post: any, index: number) => {
                return (
-                  <Link
-                     href={`/${post?.slug}`}
-                     key={index}
-                     className="flex flex-col gap-2 pb-6 shadow-md"
-                  >
+                  <Link href={`/${post?.slug}`} key={index} className="flex flex-col gap-4">
                      <img
                         src={post?.jetpack_featured_media_url}
                         alt="blog img"
                         className="h-[13rem] w-full object-cover object-center"
                      />
-                     <p className="px-4 text-lg font-[700]">{post?.title?.rendered}</p>
+                     <p className=" text-lg font-[700]">{post?.title?.rendered}</p>
                   </Link>
                );
             })}

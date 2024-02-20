@@ -36,6 +36,9 @@ module.exports = {
          },
       },
       extend: {
+         backdropBlur: {
+            "3xl": "3rem",
+         },
          wordSpacing: {
             sm: "0.25rem",
             md: "0.5rem",

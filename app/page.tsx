@@ -11,7 +11,7 @@ import EditorsPick from "@/components/landing/EditorsPick";
 import FeaturedArticles from "@/components/landing/FeaturedArticles";
 import Trending from "@/components/landing/Trending";
 import Newsletter from "@/components/landing/Newsletter";
-import Finance from "@/components/landing/Finance";
+import HomePageCategory from "@/components/landing/HomePageCategory";
 import FeaturedPosts from "@/components/landing/FeaturedPosts";
 import ReviewSlide from "@/components/ReviewsSlide";
 import { Search } from "lucide-react";
@@ -29,9 +29,16 @@ export default async function Home() {
    const featuredArticlesData = await wordPressInstance
       .posts()
       .categories(16)
-      .perPage(4)
+      .perPage(8)
       .page(1)
       .embed();
+   const africanTrendingTechData = await wordPressInstance
+      .posts()
+      .categories(87)
+      .perPage(6)
+      .page(1)
+      .embed();
+   const businessData = await wordPressInstance.posts().categories(69).perPage(3).page(1).embed();
 
    return (
       <div className="h-full w-full">
@@ -39,11 +46,11 @@ export default async function Home() {
 
          <LatestPosts latestPostsData={LatestPostsData} />
          <EditorsPick editorsPickData={editorsPickData} />
-         <FeaturedArticles featuredArticlesData={featuredArticlesData} />
-         <Trending />
+         <FeaturedArticles featuredArticlesData={featuredArticlesData.slice(0, 4)} />
+         <Trending africanTrendingTechData={africanTrendingTechData} />
          <Newsletter />
-         <Finance />
-         <FeaturedPosts />
+         <HomePageCategory title="Finance" slug="business" id={69} data={businessData} />
+         <FeaturedPosts featuredArticlesData={featuredArticlesData.slice(4, 8)} />
       </div>
    );
 }

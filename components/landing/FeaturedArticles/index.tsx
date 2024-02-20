@@ -6,27 +6,6 @@ import { findAuthorName, users } from "@/lib/constants";
 import Link from "next/link";
 
 const FeaturedArticles = ({ featuredArticlesData }: { featuredArticlesData: any }) => {
-   const articles = [
-      {
-         image: "/images/landing/editorsPick/e-signature.svg",
-         time: "34 Minutes ago",
-         title: "After e-signature, tom morro believes e-contract will be the next thing",
-         author: "By Damilola oluwaseun",
-      },
-      {
-         image: "/images/landing/latestPosts/post2.svg",
-         time: "34 Minutes ago",
-         title: "After e-signature, tom morro believes e-contract will be the next thing",
-         author: "By Damilola oluwaseun",
-      },
-      {
-         image: "/images/landing/editorsPick/e-contract.svg",
-         time: "34 Minutes ago",
-         title: "After e-signature, tom morro believes e-contract will be the next thing",
-         author: "By Damilola oluwaseun",
-      },
-   ];
-
    return (
       <section className="container w-full max-w-[1700px] border-t border-[#000] px-container-base py-[3rem] dark:border-white lg:px-container-lg xl:px-container-xl">
          <Heading title="Featured articles" />
@@ -53,7 +32,7 @@ const FeaturedArticles = ({ featuredArticlesData }: { featuredArticlesData: any 
                            <h3 className="text-lg font-[700] ">{item?.title?.rendered}</h3>
 
                            <span className="text-base font-[700] text-primary-4 ">
-                              {findAuthorName(item.author)}
+                              By {findAuthorName(item.author)}
                            </span>
                         </div>
                      </Link>

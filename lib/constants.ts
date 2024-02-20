@@ -160,5 +160,5 @@ export const users = [
 ];
 
 export const findAuthorName = (authorId: number) => {
-   return users.find((user) => user.userId === authorId)?.name;
+   return users.find((user) => user.userId === authorId)?.name || "Staff Writer";
 };
