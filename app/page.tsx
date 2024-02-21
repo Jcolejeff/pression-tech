@@ -39,6 +39,9 @@ export default async function Home() {
       .page(1)
       .embed();
    const businessData = await wordPressInstance.posts().categories(69).perPage(3).page(1).embed();
+   const cryptoData = await wordPressInstance.posts().categories(85).perPage(3).page(1).embed();
+   const gadgetsData = await wordPressInstance.posts().categories(22).perPage(3).page(1).embed();
+   const scienceData = await wordPressInstance.posts().categories(23).perPage(3).page(1).embed();
 
    return (
       <div className="h-full w-full">
@@ -50,6 +53,9 @@ export default async function Home() {
          <Trending africanTrendingTechData={africanTrendingTechData} />
          <Newsletter />
          <HomePageCategory title="Finance" slug="business" id={69} data={businessData} />
+         <HomePageCategory title="Cryptocurrency" slug="cryptocurrency" id={85} data={cryptoData} />
+         <HomePageCategory title="Gadgets" slug="gadgets" id={22} data={gadgetsData} />
+         <HomePageCategory title="Science" slug="science" id={23} data={scienceData} />
          <FeaturedPosts featuredArticlesData={featuredArticlesData.slice(4, 8)} />
       </div>
    );

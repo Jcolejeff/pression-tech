@@ -3,14 +3,14 @@ import React from "react";
 
 import { url } from "@/lib/utils";
 
-import { Bookmark, ArrowDownUp } from "lucide-react";
+import { Bookmark, ArrowDownUp, ArrowRight } from "lucide-react";
 import Heading from "@/components/Heading";
 import Link from "next/link";
 
 const EditorsPick = ({ editorsPickData }: { editorsPickData: any }) => {
    return (
       <section className="container w-full max-w-[1700px] grid-cols-3 gap-20 border-t border-[#000] px-container-base py-[3rem] dark:border-white md:grid lg:px-container-lg xl:px-container-xl">
-         <div className="col-span-2 flex flex-col gap-6 ">
+         <Link href={`${editorsPickData[2]?.slug}`} className="col-span-2 flex flex-col gap-6 ">
             <Heading title="Editor's pick" />
             <img
                src={editorsPickData[0]?.jetpack_featured_media_url}
@@ -39,8 +39,11 @@ const EditorsPick = ({ editorsPickData }: { editorsPickData: any }) => {
             <Link href={`${editorsPickData[0]?.slug}`} className="font-[700] text-primary-4">
                Read more
             </Link>
-         </div>
-         <div className=" md:mt col-span-1 mt-10 flex flex-col gap-6">
+         </Link>
+         <Link
+            href={`${editorsPickData[1]?.slug}`}
+            className=" md:mt col-span-1 mt-10 flex flex-col gap-6"
+         >
             <img src={editorsPickData[1]?.jetpack_featured_media_url} alt="" className="w-full" />
             <h2 className="text-lg font-[700]">{editorsPickData[1]?.title?.rendered}</h2>
             <p
@@ -53,9 +56,9 @@ const EditorsPick = ({ editorsPickData }: { editorsPickData: any }) => {
                className="flex items-center gap-2 text-base font-[400] text-primary-4"
             >
                <span>READ MORE</span>
-               <ArrowDownUp />
+               <ArrowRight className="w-5 -rotate-45" />
             </Link>
-         </div>
+         </Link>
       </section>
    );
 };

@@ -39,7 +39,10 @@ const FeaturedArticles = ({ featuredArticlesData }: { featuredArticlesData: any 
                   );
                })}
             </div>
-            <div className="mt-10 flex flex-col gap-8 md:mt-0">
+            <Link
+               href={`/${featuredArticlesData[3]?.slug}`}
+               className="mt-10 flex flex-col gap-8 md:mt-0"
+            >
                <div className="w-full">
                   <img
                      src={featuredArticlesData[3]?.jetpack_featured_media_url}
@@ -65,7 +68,7 @@ const FeaturedArticles = ({ featuredArticlesData }: { featuredArticlesData: any 
                <div className="mt-[3rem] flex w-full items-center justify-center bg-[#D9D9D9] py-[2rem]">
                   <h3 className="text-lg font-[700] uppercase">Avertisement</h3>
                </div>
-            </div>
+            </Link>
          </div>
       </section>
    );

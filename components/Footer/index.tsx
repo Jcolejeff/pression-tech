@@ -85,8 +85,8 @@ const Footer = ({}: IFooter) => {
                </div>
                <div className="mt-10 gap-10 md:flex">
                   <p className="w-full text-[1rem] font-[400] text-white md:text-lg">
-                     TechCabal is a future-focused publication that speaks to African innovation and
-                     technology in depth
+                     TechPression is a future-focused publication that speaks to African innovation
+                     and technology in depth
                   </p>
                   <div className="mt-10 flex w-full gap-20 md:mt-[0]">
                      <ul className="text-[1rem] font-[400] text-white md:text-lg">

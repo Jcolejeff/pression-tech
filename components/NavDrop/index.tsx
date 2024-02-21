@@ -65,7 +65,7 @@ const NavDrop = ({ darkNavBg }: INavDrop) => {
                   <NavigationMenuTrigger>Tech</NavigationMenuTrigger>
                   <NavigationMenuContent>
                      <ul className="grid w-[400px] list-none gap-3 p-4 md:w-[500px] md:grid-cols-2  lg:w-[600px]">
-                        {/* {components.map((component) => (
+                        {components.map((component) => (
                            <ListItem
                               key={component.title}
                               title={component.title}
@@ -73,7 +73,7 @@ const NavDrop = ({ darkNavBg }: INavDrop) => {
                            >
                               {component.description}
                            </ListItem>
-                        ))} */}
+                        ))}
                      </ul>
                   </NavigationMenuContent>
                </NavigationMenuItem>
@@ -111,14 +111,14 @@ const NavDrop = ({ darkNavBg }: INavDrop) => {
 
                <NavigationMenuItem>
                   <span className=" block cursor-pointer px-4   font-[700] leading-[1.5rem] tracking-[0.005rem] text-white lg:text-[1rem]">
-                     <a href={url("/science")}>Science</a>
+                     <Link href={url("/category/science")}>Science</Link>
                   </span>
                </NavigationMenuItem>
                <NavigationMenuItem>
                   <span
                      className={` block cursor-pointer px-4  font-[700] leading-[1.5rem]  tracking-[0.005rem] text-white lg:text-[1rem] `}
                   >
-                     <a href={url("/#features")}>Entertainment</a>
+                     <Link href={url("/category/entertainment")}>Entertainment</Link>
                   </span>
                </NavigationMenuItem>
 
@@ -126,21 +126,21 @@ const NavDrop = ({ darkNavBg }: INavDrop) => {
                   <span
                      className={` block cursor-pointer px-4  font-[700] leading-[1.5rem]  tracking-[0.005rem] text-white lg:text-[1rem] `}
                   >
-                     <a href={url("/techTv")}>TechTv</a>
+                     <Link href={url("/techTv")}>TechTv</Link>
                   </span>
                </NavigationMenuItem>
                <NavigationMenuItem>
                   <span
                      className={` block cursor-pointer px-4  font-[700] leading-[1.5rem]  tracking-[0.005rem] text-white lg:text-[1rem] `}
                   >
-                     <a href={url("/#features")}>Cryptocurrency</a>
+                     <Link href={url("/category/cryptocurrency")}>Cryptocurrency</Link>
                   </span>
                </NavigationMenuItem>
                <NavigationMenuItem>
                   <span
                      className={` block cursor-pointer px-4  font-[700] leading-[1.5rem]  tracking-[0.005rem] text-white lg:text-[1rem] `}
                   >
-                     <a href={url("/#features")}>ContactUs</a>
+                     <Link href={url("/contactUs")}>ContactUs</Link>
                   </span>
                </NavigationMenuItem>
             </NavigationMenuList>

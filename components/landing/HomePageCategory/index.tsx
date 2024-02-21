@@ -13,27 +13,17 @@ interface HomePageCategoryProps {
    id: number;
 }
 const HomePageCategory = ({ title, data, slug, id }: HomePageCategoryProps) => {
-   const posts = [
-      {
-         image: "/images/landing/editorsPick/e-signature.svg",
-         text: "Tesla Newly cybertruck amazed citizen with it AI features",
-      },
-      {
-         image: "/images/landing/sections/tech.svg",
-         text: "Tesla Newly cybertruck amazed citizen with it AI features",
-      },
-   ];
    return (
       <section className="container max-w-[1700px] border-t border-[#000] px-container-base py-[3rem] dark:border-white lg:px-container-lg xl:px-container-xl">
          <div className="general grid-cols-6 gap-20 md:grid">
-            <div className="first relative col-span-3">
+            <Link href={`/${data[0]?.slug}`} className="first relative col-span-3 block">
                <Heading title={title} />
                <div className="relative">
                   <div className=" mt-6 flex flex-col gap-6">
-                     <img src={data[1]?.jetpack_featured_media_url} className="w-full" alt="" />
+                     <img src={data[0]?.jetpack_featured_media_url} className="w-full" alt="" />
 
                      <div
-                        className="absolute flex max-w-[70%] flex-col gap-3 bg-white py-4 dark:bg-black md:max-w-[55%]"
+                        className="absolute flex max-w-[70%] flex-col gap-3 bg-white py-4 pr-4 dark:bg-black md:max-w-[55%]"
                         style={{ top: "80%" }}
                      >
                         <div className="flex items-center justify-between">
@@ -55,7 +45,7 @@ const HomePageCategory = ({ title, data, slug, id }: HomePageCategoryProps) => {
                      <span>Read More...</span>
                   </Link>
                </div>
-            </div>
+            </Link>
             <div className="second col-span-2 mt-10 md:mt-0 ">
                <div className="h-fit border-black px-10 dark:border-white md:border-l md:border-r">
                   <Heading title="Related Post" />
@@ -79,14 +69,14 @@ const HomePageCategory = ({ title, data, slug, id }: HomePageCategoryProps) => {
                   </div>
                </div>
                <div className="mt-10 text-center text-lg font-[700] text-primary-4">
-                  <a href="#" className="text-center">
+                  <Link href={`/category/${slug}`} className="text-center">
                      More on {title} News
-                  </a>
+                  </Link>
                </div>
             </div>
             <div className="third col-span-1 h-full">
                <div className=" flex h-full w-full items-center justify-center bg-[#D9D9D9] py-[2rem]">
-                  <h3 className="text-lg font-[700] uppercase">Avert</h3>
+                  <h3 className="text-lg font-[700] uppercase">Advert</h3>
                </div>
             </div>
          </div>

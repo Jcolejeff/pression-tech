@@ -15,7 +15,7 @@ import Link from "next/link";
 const LandingHero = ({ heroData }: { heroData: any }) => {
    return (
       <div className="w-full">
-         <section className="bg mt-20 w-full overflow-hidden bg-[url('/herobg3.jpg')]  bg-cover bg-center bg-no-repeat text-white md:bg-[url('/herobg2.jpg')]">
+         <section className="bg  w-full overflow-hidden bg-[url('/herobg3.jpg')]  bg-cover bg-center bg-no-repeat text-white md:bg-[url('/herobg2.jpg')]">
             <section className="container  relative w-full max-w-[1700px]  px-container-base py-[3rem] pb-20 md:py-[5rem] md:pb-[7.25rem] md:pt-[6rem] lg:pl-container-lg xl:pl-container-xl">
                <div className="flex items-center border md:hidden">
                   <Input

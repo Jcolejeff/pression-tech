@@ -32,7 +32,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
          >
             <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
                <div className="relative h-full w-full overflow-x-hidden scroll-smooth">
-                  <header className={`fixed left-0 top-0 z-50 w-full bg-primary-4 `}>
+                  {/* <header
+                     className={`fixed left-0 top-0 z-50 w-full bg-white/30 backdrop-blur-sm dark:bg-slate-950 dark:bg-opacity-30`}
+                  ></header> */}
+                  <header className={`fixed left-0 top-0 z-50 w-full bg-primary-4/60 `}>
                      <NavBar />
                   </header>
                   <main>{children}</main>
