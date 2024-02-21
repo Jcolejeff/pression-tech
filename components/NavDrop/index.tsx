@@ -17,6 +17,7 @@ import {
 import { capitalizeFirstLetter } from "lib/helpers";
 import { url } from "lib/utils";
 import { Search } from "lucide-react";
+import { startProgress } from "../ProgressBarChecker/Events";
 interface INavDrop {
    darkNavBg?: boolean;
 }
@@ -111,14 +112,18 @@ const NavDrop = ({ darkNavBg }: INavDrop) => {
 
                <NavigationMenuItem>
                   <span className=" block cursor-pointer px-4   font-[700] leading-[1.5rem] tracking-[0.005rem] text-white lg:text-[1rem]">
-                     <Link href={url("/category/science")}>Science</Link>
+                     <a onClick={startProgress} href={url("/category/science")}>
+                        Science
+                     </a>
                   </span>
                </NavigationMenuItem>
                <NavigationMenuItem>
                   <span
                      className={` block cursor-pointer px-4  font-[700] leading-[1.5rem]  tracking-[0.005rem] text-white lg:text-[1rem] `}
                   >
-                     <Link href={url("/category/entertainment")}>Entertainment</Link>
+                     <a onClick={startProgress} href={url("/category/entertainment")}>
+                        Entertainment
+                     </a>
                   </span>
                </NavigationMenuItem>
 
@@ -126,14 +131,18 @@ const NavDrop = ({ darkNavBg }: INavDrop) => {
                   <span
                      className={` block cursor-pointer px-4  font-[700] leading-[1.5rem]  tracking-[0.005rem] text-white lg:text-[1rem] `}
                   >
-                     <Link href={url("/techTv")}>TechTv</Link>
+                     <a onClick={startProgress} href={url("/techTv")}>
+                        TechTv
+                     </a>
                   </span>
                </NavigationMenuItem>
                <NavigationMenuItem>
                   <span
                      className={` block cursor-pointer px-4  font-[700] leading-[1.5rem]  tracking-[0.005rem] text-white lg:text-[1rem] `}
                   >
-                     <Link href={url("/category/cryptocurrency")}>Cryptocurrency</Link>
+                     <a onClick={startProgress} href={url("/category/cryptocurrency")}>
+                        Cryptocurrency
+                     </a>
                   </span>
                </NavigationMenuItem>
                <NavigationMenuItem>

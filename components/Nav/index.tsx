@@ -15,6 +15,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 import { Search } from "lucide-react";
+import { startProgress } from "../ProgressBarChecker/Events";
 
 interface Props {
    darkNavBg?: boolean;
@@ -68,9 +69,9 @@ const NavBar: React.FC<Props> = ({ darkNavBg }) => {
    // console.log(currentURL);
    return (
       <nav className="container max-w-[1700px]  px-container-base lg:px-container-lg xl:px-container-xl">
-         <div className="flex w-full items-center justify-between py-[1.2rem] md:pb-[1rem] md:pt-[1.5rem] lg:border-b-secondary-1 xxl:py-8">
+         <div className="flex w-full items-center justify-between py-[1.2rem] md:pb-[1rem] md:pt-[0.5rem] lg:border-b-secondary-1 lg:py-5 xxl:py-4 xxl:pt-5">
             <div className="flex w-full items-center gap-[2.5rem]">
-               <a href="/" className="flex items-center gap-4">
+               <a onClick={startProgress} href="/" className="flex items-center gap-4">
                   <img src={url("/images/logo.svg")} alt="" className="w-10 " />
                </a>
                {/* <div className="hidden items-center gap-[0.5rem] lg:flex">

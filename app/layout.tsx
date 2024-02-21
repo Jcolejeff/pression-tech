@@ -6,12 +6,12 @@ import { Analytics } from "@/components/analytics";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/Nav";
 import "react-toastify/dist/ReactToastify.css";
-
 import { ToastContainer } from "react-toastify";
-
+import "nprogress/nprogress.css";
 const inter = Inter({ subsets: ["latin"] });
 const montserrat = Montserrat({ subsets: ["latin"] });
-
+import { Suspense } from "react";
+import { NavigationEvents } from "@/components/ProgressBarChecker/Events";
 export const metadata = {
    title: "PressionTech",
    description: "Get the Best technews!",
@@ -31,11 +31,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
             className={`h-[100vh] min-h-screen w-screen overflow-hidden bg-white  text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-50 ${montserrat.className}`}
          >
             <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+               <Suspense fallback={null}>
+                  <NavigationEvents />
+               </Suspense>
                <div className="relative h-full w-full overflow-x-hidden scroll-smooth">
                   {/* <header
                      className={`fixed left-0 top-0 z-50 w-full bg-white/30 backdrop-blur-sm dark:bg-slate-950 dark:bg-opacity-30`}
                   ></header> */}
-                  <header className={`fixed left-0 top-0 z-50 w-full bg-primary-4/60 `}>
+                  <header
+                     className={`fixed left-0 top-0 z-50 w-full bg-primary-4/60 backdrop-blur-3xl `}
+                  >
                      <NavBar />
                   </header>
                   <main>{children}</main>

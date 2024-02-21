@@ -5,6 +5,7 @@ import React from "react";
 import { ArrowDown } from "lucide-react";
 import Heading from "@/components/Heading";
 import Link from "next/link";
+import { startProgress } from "@/components/ProgressBarChecker/Events";
 
 interface HomePageCategoryProps {
    title: string;
@@ -69,9 +70,9 @@ const HomePageCategory = ({ title, data, slug, id }: HomePageCategoryProps) => {
                   </div>
                </div>
                <div className="mt-10 text-center text-lg font-[700] text-primary-4">
-                  <Link href={`/category/${slug}`} className="text-center">
+                  <a onClick={startProgress} href={`/category/${slug}`} className="text-center">
                      More on {title} News
-                  </Link>
+                  </a>
                </div>
             </div>
             <div className="third col-span-1 h-full">
