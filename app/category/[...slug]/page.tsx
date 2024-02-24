@@ -7,7 +7,15 @@ import { findAuthorName } from "@/lib/constants";
 import { wordPressInstance } from "@/lib/http";
 import { timeSincePublished } from "@/lib/utils";
 import Link from "next/link";
-
+import {
+   Pagination,
+   PaginationContent,
+   PaginationEllipsis,
+   PaginationItem,
+   PaginationLink,
+   PaginationNext,
+   PaginationPrevious,
+} from "components/ui/pagination";
 const Science = async ({ params }: { params: any }) => {
    const category = await wordPressInstance.categories().slug(params?.slug?.at(-1));
    const posts = await wordPressInstance
@@ -101,6 +109,34 @@ const Science = async ({ params }: { params: any }) => {
                         );
                      })}
                   </div>
+
+                  <Pagination>
+                     <PaginationContent>
+                        <PaginationItem>
+                           <PaginationPrevious href="#" />
+                        </PaginationItem>
+                        <PaginationItem>
+                           <PaginationLink href="#" isActive>
+                              1
+                           </PaginationLink>
+                        </PaginationItem>
+                        <PaginationItem>
+                           <PaginationLink href="#">2</PaginationLink>
+                        </PaginationItem>
+                        <PaginationItem>
+                           <PaginationLink href="#">3</PaginationLink>
+                        </PaginationItem>
+                        <PaginationItem>
+                           <PaginationEllipsis />
+                        </PaginationItem>
+                        <PaginationItem>
+                           <PaginationLink href="#">10</PaginationLink>
+                        </PaginationItem>
+                        <PaginationItem>
+                           <PaginationNext href="#" />
+                        </PaginationItem>
+                     </PaginationContent>
+                  </Pagination>
                </div>
 
                {/* ----------Advertisement-------- */}
