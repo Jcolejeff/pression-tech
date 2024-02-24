@@ -5,7 +5,7 @@ export function cn(...inputs: ClassValue[]) {
    return twMerge(clsx(inputs));
 }
 export const formatDate = (i: string) => {
-   return moment(i).format("MMM Do YY");
+   return moment(i).format("Do MMM YYYY");
 };
 
 // export const url = (url: string) => `${import.meta.env.BASE_URL}${url}`;
