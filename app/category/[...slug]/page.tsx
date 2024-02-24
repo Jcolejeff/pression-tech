@@ -5,6 +5,7 @@ import Hero from "@/components/Science/Hero";
 import RecentArticles from "@/components/Science/RecentArticles";
 import { findAuthorName } from "@/lib/constants";
 import { wordPressInstance } from "@/lib/http";
+import { timeSincePublished } from "@/lib/utils";
 import Link from "next/link";
 
 const Science = async ({ params }: { params: any }) => {
@@ -52,7 +53,7 @@ const Science = async ({ params }: { params: any }) => {
                            >
                               <div className="flex max-w-fit flex-col gap-4">
                                  <span className="text-sm font-[700] text-[#00000080] dark:text-[#ffffffab]">
-                                    {item?.date}
+                                    {timeSincePublished(item?.date)}
                                  </span>
                                  <h3 className="text-xl font-[700] ">{item?.title?.rendered}</h3>
                                  <span className="text-base font-[700] text-primary-4 ">
@@ -73,9 +74,10 @@ const Science = async ({ params }: { params: any }) => {
                   <div className=" flex flex-col gap-10 ">
                      {posts?.slice(7)?.map((item: any, index: number) => {
                         return (
-                           <div
+                           <Link
+                              href={`/${item?.slug}`}
                               key={index}
-                              className="gap-6 border-t border-[#0851bd8a] p-4  py-10 dark:border-[#095bd58a] md:flex lg:px-20"
+                              className="block gap-6 border-t border-[#0851bd8a] p-4  py-10 dark:border-[#095bd58a] md:flex lg:px-20"
                            >
                               <div className="h-[12rem] w-full md:min-w-[35%] md:max-w-[35%]">
                                  <img
@@ -95,7 +97,7 @@ const Science = async ({ params }: { params: any }) => {
                                     {findAuthorName(item?.author)}
                                  </span>
                               </div>
-                           </div>
+                           </Link>
                         );
                      })}
                   </div>

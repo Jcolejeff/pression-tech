@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Heading from "@/components/Heading";
+import { timeSincePublished } from "@/lib/utils";
 import Link from "next/link";
 import React from "react";
 
@@ -23,7 +24,7 @@ const Trending = ({ africanTrendingTechData }: { africanTrendingTechData: any })
                         />
                      </div>
 
-                     <span className="text-base font-[700]">{trend?.date}</span>
+                     <span className="text-base font-[700]">{timeSincePublished(trend?.date)}</span>
                      <h2 className="text-xl font-[700]">{trend?.title?.rendered}</h2>
 
                      <div className="">

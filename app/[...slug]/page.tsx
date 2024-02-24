@@ -86,7 +86,7 @@ const Articles = async ({ params }: Props) => {
                   {(() => {
                      const wpTerm = data[0]?._embedded?.["wp:term"]?.[1];
                      if (Array.isArray(wpTerm)) {
-                        return wpTerm.map((item, index) => (
+                        return wpTerm.slice(0, 4).map((item, index) => (
                            <button
                               key={index}
                               className="color-[#000] rounded-[24px] border border-primary-4 px-4 py-2 text-xs font-[400]"

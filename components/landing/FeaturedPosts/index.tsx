@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { url } from "@/lib/utils";
+import { timeSincePublished, url } from "@/lib/utils";
 import React from "react";
 
 import { ArrowDown } from "lucide-react";
@@ -83,7 +83,7 @@ const FeaturedPosts = ({ featuredArticlesData }: { featuredArticlesData: any }) 
                         {findAuthorName(featuredArticlesData[3]?.author)}
                      </span>
                      <span className="text-sm font-[400] text-[#00000070]">
-                        {featuredArticlesData[3]?.date}
+                        {timeSincePublished(featuredArticlesData[3]?.date)}
                      </span>
                   </div>
                </Link>

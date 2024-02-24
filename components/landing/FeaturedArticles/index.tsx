@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Heading from "@/components/Heading";
-import { url } from "@/lib/utils";
+import { timeSincePublished, url } from "@/lib/utils";
 import React from "react";
 import { findAuthorName, users } from "@/lib/constants";
 import Link from "next/link";
@@ -27,7 +27,7 @@ const FeaturedArticles = ({ featuredArticlesData }: { featuredArticlesData: any 
                         </div>
                         <div className="flex max-w-fit flex-col gap-5">
                            <span className="text-sm font-[700] text-[#00000080] dark:text-white">
-                              {item?.date}
+                              {timeSincePublished(item?.date)}
                            </span>
                            <h3 className="text-lg font-[700] ">{item?.title?.rendered}</h3>
 
@@ -57,7 +57,7 @@ const FeaturedArticles = ({ featuredArticlesData }: { featuredArticlesData: any 
                />
 
                <span className="text-sm font-[700] text-[#000] dark:text-white">
-                  {featuredArticlesData[3]?.date}
+                  {timeSincePublished(featuredArticlesData[3]?.date)}
                </span>
                <Link
                   href={`/${featuredArticlesData[3]?.slug}`}
