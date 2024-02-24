@@ -1,8 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import ArticleDetails from "@/components/Articles/ArticleDetails";
 import SingleBlog from "@/components/Articles/ArticleDetails/dynamic";
 import Comments from "@/components/Articles/Comments";
-import Hero from "@/components/Articles/Hero";
 import RelatedNews from "@/components/Articles/RelatedNews";
 import { findAuthorName } from "@/lib/constants";
 import { wordPressInstance } from "@/lib/http";
