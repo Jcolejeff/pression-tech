@@ -69,14 +69,14 @@ const NavBar: React.FC<Props> = ({ darkNavBg }) => {
    // console.log(currentURL);
    return (
       <nav className="container max-w-[1700px]  px-container-base lg:px-container-lg xl:px-container-xl">
-         <div className="flex w-full items-center justify-between py-[1.2rem] md:pb-[1rem] md:pt-[0.5rem] lg:border-b-secondary-1 lg:py-5 xxl:py-4 xxl:pt-5">
+         <div className="flex w-full items-center justify-between py-[0.62rem] md:pb-[1rem] md:pt-[0.5rem] lg:border-b-secondary-1 lg:py-5 xxl:py-4 xxl:pt-5">
             <div className="flex w-full items-center gap-[2.5rem]">
-               <a onClick={startProgress} href="/" className="flex items-center gap-4">
-                  <img src={url("/images/logo.svg")} alt="" className="w-10 " />
+               <a onClick={startProgress} href="/" className="flex items-center gap-2">
+                  <img src={url("/images/logo.svg")} alt="" className=" w-8 md:w-10 " />
+                  <p className="text-[0.7rem] font-semibold text-white md:text-base">
+                     Tech Pression
+                  </p>
                </a>
-               {/* <div className="hidden items-center gap-[0.5rem] lg:flex">
-                  <NavDrop darkNavBg={darkNavBg} />
-               </div> */}
             </div>
 
             <div className="invisible ml-[-6px] flex items-center justify-end gap-4 transition-all duration-500 ease-in-out md:visible md:mb-0 md:w-1/2">
@@ -154,7 +154,8 @@ const NavBar: React.FC<Props> = ({ darkNavBg }) => {
                   <Search width={"4rem"} />
                </span>
             </div>
-            <div className="flex md:hidden">
+            <div className="flex items-center gap-2 md:hidden">
+               <ModeToggle />
                <Menu />
             </div>
          </div>

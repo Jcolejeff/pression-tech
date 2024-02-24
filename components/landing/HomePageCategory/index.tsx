@@ -24,7 +24,7 @@ const HomePageCategory = ({ title, data, slug, id }: HomePageCategoryProps) => {
                      <img src={data[0]?.jetpack_featured_media_url} className="w-full" alt="" />
 
                      <div
-                        className="absolute flex max-w-[70%] flex-col gap-3 bg-white py-4 pr-4 dark:bg-black md:max-w-[55%]"
+                        className="absolute flex max-w-[80%] flex-col gap-3 bg-white py-4 pr-4 dark:bg-black md:max-w-[75%]"
                         style={{ top: "80%" }}
                      >
                         <div className="flex items-center justify-between">

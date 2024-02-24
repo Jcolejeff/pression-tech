@@ -23,38 +23,39 @@ interface INavDrop {
 }
 const components: { title: string; href: string; description: string }[] = [
    {
-      title: "Alert Dialog",
-      href: "/docs/primitives/alert-dialog",
+      title: "Business",
+      href: "/category/business",
       description:
-         "A modal dialog that interrupts the user with important content and expects a response.",
+         "Get the latest news and updates on business, finance, economy, stock market, BSE, NSE, Nifty, Sensex and much more.",
    },
    {
-      title: "Hover Card",
-      href: "/docs/primitives/hover-card",
-      description: "For sighted users to preview content available behind a link.",
+      title: "Editors Pick",
+      href: "/category/editors-pick",
+      description: "See out top picks for the best news and updates.",
    },
    {
-      title: "Progress",
-      href: "/docs/primitives/progress",
+      title: "Start Ups",
+      href: "/category/startups",
       description:
-         "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+         "Get latest news and updates on startups, startup stories, small business, new business, startups in India and world, business ideas, startup success stories and much more.",
    },
    {
-      title: "Scroll-area",
-      href: "/docs/primitives/scroll-area",
-      description: "Visually or semantically separates content.",
-   },
-   {
-      title: "Tabs",
-      href: "/docs/primitives/tabs",
+      title: "FinTech",
+      href: "/category/fintech",
       description:
-         "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+         "Get the latest news and updates on FinTech, FinTech companies, FinTech startups, FinTech industry and much more.",
    },
    {
-      title: "Tooltip",
-      href: "/docs/primitives/tooltip",
+      title: "Technology",
+      href: "/category/technology",
       description:
-         "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+         "Get the latest news and updates on technology, technology news, technology updates, technology information, technology articles and much more.",
+   },
+   {
+      title: "Telecommunication",
+      href: "/category/telecommunication",
+      description:
+         "Get the latest news and updates on telecommunication, telecom industry, telecom companies, telecom services, telecom market and much more.",
    },
 ];
 const NavDrop = ({ darkNavBg }: INavDrop) => {
@@ -171,12 +172,13 @@ export function NavigationMenuDemo() {
 const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWithoutRef<"a">>(
    ({ className, title, children, ...props }, ref) => {
       return (
-         <li>
+         <li className="block select-none space-y-1 rounded-md p-3 leading-none  outline-none transition-colors">
             <NavigationMenuLink asChild>
                <a
+                  onClick={startProgress}
                   ref={ref}
                   className={cn(
-                     "hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors",
+                     "hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block select-none space-y-1 rounded-md p-3 leading-none  outline-none  transition-all duration-150 ease-linear hover:bg-gray-200",
                      className,
                   )}
                   {...props}
