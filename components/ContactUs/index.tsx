@@ -1,5 +1,6 @@
+"use client";
 import React from "react";
-
+import ContactUsForm from "./Form";
 const Contacts = () => {
    return (
       <div className="mt-40">
@@ -24,9 +25,15 @@ const Contacts = () => {
             </div>
          </div>
 
-         <div className="mb-10 mt-8 grid-cols-3 border-b border-t border-black px-container-base dark:border-white md:mt-4 lg:grid lg:px-container-lg xl:px-container-xl  ">
-            <div className="col-span-2 h-[20rem] w-full border-black bg-[#D9D9D9] dark:border-white lg:border-r"></div>
-            <div className="col-span-1 mt-8 h-[20rem] w-full bg-[#D9D9D9] md:mt-0"></div>
+         <div className="mb-10 mt-8 grid-cols-3 border-b border-t border-black px-container-base  dark:border-white md:mt-4 lg:grid lg:px-container-lg  xl:px-container-xl ">
+            <div className="col-span-2 w-full border-black py-8 pr-6 dark:border-white lg:border-r">
+               <ContactUsForm />
+            </div>
+            <div className="col-span-1 h-full w-full px-8 py-8">
+               <div className=" flex h-full w-full items-center justify-center bg-[#D9D9D9] md:mt-0">
+                  <p>Advert</p>
+               </div>
+            </div>
          </div>
       </div>
    );

@@ -39,7 +39,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                      className={`fixed left-0 top-0 z-50 w-full bg-white/30 backdrop-blur-sm dark:bg-slate-950 dark:bg-opacity-30`}
                   ></header> */}
                   <header
-                     className={`fixed left-0 top-0 z-50 w-full bg-primary-4 backdrop-blur-3xl md:bg-primary-4/60 `}
+                     className={`fixed left-0 top-0 z-50 w-full bg-primary-4 backdrop-blur-3xl md:bg-primary-4/70 `}
                   >
                      <NavBar />
                   </header>

@@ -75,7 +75,7 @@ const HomePageCategory = ({ title, data, slug, id }: HomePageCategoryProps) => {
                   </a>
                </div>
             </div>
-            <div className="third col-span-1 h-full">
+            <div className="third col-span-1 mt-4 h-full md:mt-0">
                <div className=" flex h-full w-full items-center justify-center bg-[#D9D9D9] py-[2rem]">
                   <h3 className="text-lg font-[700] uppercase">Advert</h3>
                </div>
