@@ -73,10 +73,10 @@ const Menu = () => {
                   menuOpen ? `translate-x-0` : `!-translate-x-full`
                } bottom-0 left-0 right-0  top-0 z-10 flex w-[100vw] flex-col overflow-auto bg-white  transition-transform duration-300 ease-in-out`}
             >
-               <div className="flex w-full items-center justify-between border-b border-b-gray-300 bg-primary-4 px-container-base pb-[0.75rem] pt-[1.5rem] md:pb-[1rem] lg:border-b-secondary-1">
+               <div className="flex w-full items-center justify-between border-b border-b-gray-300 bg-primary-4 px-container-base pb-[1rem] pt-[1rem] md:pb-[1rem] lg:border-b-secondary-1">
                   <a onClick={startProgress} href="/" className="flex items-center gap-2">
                      <img src={url("/images/logo.svg")} alt="" className=" w-8 md:w-10 " />
-                     <p className="text-[0.7rem] font-semibold text-white md:text-base">
+                     <p className="text-[0.74rem] font-semibold text-white md:text-base">
                         Tech Pression
                      </p>
                   </a>
