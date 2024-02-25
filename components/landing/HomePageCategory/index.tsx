@@ -48,8 +48,8 @@ const HomePageCategory = ({ title, data, slug, id }: HomePageCategoryProps) => {
                </div>
             </Link>
             <div className="second col-span-2 mt-10 md:mt-0 ">
-               <div className="h-fit border-black px-10 dark:border-white md:border-l md:border-r">
-                  <Heading title="Related Post" />
+               <div className="h-fit border-black dark:border-white md:border-l md:border-r md:px-10">
+                  <Heading title={`Related ${title} Posts`} />
                   <div className="mt-6 flex flex-col gap-10">
                      {data?.slice(1)?.map((post: any, index: number) => {
                         return (

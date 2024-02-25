@@ -34,10 +34,10 @@ const FeaturedPosts = ({ featuredArticlesData }: { featuredArticlesData: any }) 
                   return (
                      <Link href={`/${post?.slug}`} key={index} className="flex flex-col gap-4">
                         <div className="ml-[1.5rem] flex items-center gap-4">
-                           <span className="text-xl font-[700]">
+                           <span className="text-base font-[700]">
                               {post._embedded["wp:term"][0][0]?.name}
                            </span>
-                           <span className="text-base font-[400]">
+                           <span className="text-sm font-[400]">
                               {/* {post?.date} */}8 min read
                            </span>
                         </div>
@@ -45,7 +45,7 @@ const FeaturedPosts = ({ featuredArticlesData }: { featuredArticlesData: any }) 
                            <span className="text-xl font-[700]">
                               <ArrowDown className=" -rotate-45" />
                            </span>
-                           <h4 className="text-2xl font-[700] ">{post?.title?.rendered}</h4>
+                           <h4 className="text-xl font-[700] ">{post?.title?.rendered}</h4>
                         </div>
                      </Link>
                   );
@@ -68,16 +68,14 @@ const FeaturedPosts = ({ featuredArticlesData }: { featuredArticlesData: any }) 
                   }}
                >
                   <div className=" flex items-center gap-4">
-                     <span className="text-xl font-[700]">
+                     <span className="text-lg font-[700]">
                         {featuredArticlesData[3]?._embedded["wp:term"][0][0]?.name}
                      </span>
                      <span className="hidden text-base font-[400] md:block">
                         {/* {featuredArticlesData[3]?.date} */} 10 min read
                      </span>
                   </div>
-                  <h4 className="text-2xl font-[700]">
-                     {featuredArticlesData[3]?.title?.rendered}
-                  </h4>
+                  <h4 className="text-xl font-[700]">{featuredArticlesData[3]?.title?.rendered}</h4>
                   <div className="flex flex-col gap-1">
                      <span className="text-sm font-[700] text-primary-4">
                         {findAuthorName(featuredArticlesData[3]?.author)}

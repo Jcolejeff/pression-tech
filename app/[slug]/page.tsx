@@ -12,14 +12,15 @@ interface Props {
    params: any;
 }
 export const metadata = {
-   title: "Techpression | Tech News",
-   description: "Get the Best technews!",
+   title: "Tech Pression | Tech News",
+   description: "Get the Best tech news!",
 };
 const Articles = async ({ params }: Props) => {
    const { slug } = params;
 
-   const data = await wordPressInstance.posts().slug(slug[0]).embed();
+   const data = await wordPressInstance.posts().slug(slug).embed();
    let categoryDetails = "";
+   let primaryCategory: any = "";
 
    if (
       data[0] &&
@@ -33,6 +34,8 @@ const Articles = async ({ params }: Props) => {
          .map((item: any) => item?.name)
          .filter((name: any) => name)
          .join(", ");
+
+      primaryCategory = data[0]._embedded["wp:term"][0][0];
       categoryDetails = categories;
    }
    const articleDetails = [
@@ -87,7 +90,7 @@ const Articles = async ({ params }: Props) => {
                         return wpTerm.slice(0, 4).map((item, index) => (
                            <button
                               key={index}
-                              className="color-[#000] rounded-[24px] border border-primary-4 px-4 py-2 text-xs font-[400]"
+                              className="color-[#000] rounded-[24px] border border-primary-4 px-2 py-1 text-[0.6rem]  font-[400] md:px-4 md:py-2 md:text-xs"
                            >
                               {item?.name}
                            </button>
@@ -99,7 +102,9 @@ const Articles = async ({ params }: Props) => {
                <div className="grid-cols-4 md:grid">
                   <div className="col-span-3 flex justify-end border-[#000] pb-10 pt-10 dark:border-white md:border-r md:pr-10">
                      <div className=" md:max-w-[70%] ">
-                        <h2 className="text-4xl font-[700]">{data[0]?.title.rendered}</h2>
+                        <h2 className=" text-2xl font-[700] md:text-4xl">
+                           {data[0]?.title.rendered}
+                        </h2>
                         <p
                            className="mt-4 text-base font-[400] text-[#0000009e] dark:text-[#ffffffc7]"
                            dangerouslySetInnerHTML={{ __html: data[0]?.excerpt?.rendered }}
@@ -182,7 +187,7 @@ const Articles = async ({ params }: Props) => {
 
             {/* <SingleBlog /> */}
          </div>
-         <RelatedNews />
+         <RelatedNews category={primaryCategory} itemId={data[0]?.id} />
          <div className="my-8 px-container-base lg:px-container-lg xl:px-container-xl">
             {/* <Comments /> */}
          </div>

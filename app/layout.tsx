@@ -13,8 +13,8 @@ const montserrat = Montserrat({ subsets: ["latin"] });
 import { Suspense } from "react";
 import { NavigationEvents } from "@/components/ProgressBarChecker/Events";
 export const metadata = {
-   title: "PressionTech",
-   description: "Get the Best technews!",
+   title: "Tech Pression",
+   description: "Get the Best tech news!",
 };
 
 interface RootLayoutProps {
