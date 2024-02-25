@@ -17,7 +17,7 @@ import {
    PaginationPrevious,
 } from "components/ui/pagination";
 const Science = async ({ params }: { params: any }) => {
-   const category = await wordPressInstance.categories().slug(params?.slug?.at(-1));
+   const category = await wordPressInstance.categories().slug(params?.slug);
    const posts = await wordPressInstance
       .posts()
       .categories(category[0].id)
@@ -113,27 +113,26 @@ const Science = async ({ params }: { params: any }) => {
                   <Pagination>
                      <PaginationContent>
                         <PaginationItem>
-                           <PaginationPrevious href="#" />
-                        </PaginationItem>
-                        <PaginationItem>
                            <PaginationLink href="#" isActive>
                               1
                            </PaginationLink>
                         </PaginationItem>
                         <PaginationItem>
-                           <PaginationLink href="#">2</PaginationLink>
+                           <PaginationLink href={`/category/${params?.slug}/page/2`}>
+                              2
+                           </PaginationLink>
                         </PaginationItem>
-                        <PaginationItem>
-                           <PaginationLink href="#">3</PaginationLink>
-                        </PaginationItem>
+
                         <PaginationItem>
                            <PaginationEllipsis />
                         </PaginationItem>
+                        <PaginationLink
+                           href={`/category/${params?.slug}/page/${posts?._paging?.totalPages}`}
+                        >
+                           {posts?._paging?.totalPages}
+                        </PaginationLink>
                         <PaginationItem>
-                           <PaginationLink href="#">10</PaginationLink>
-                        </PaginationItem>
-                        <PaginationItem>
-                           <PaginationNext href="#" />
+                           <PaginationNext href={`/category/${params?.slug}/page/2`} />
                         </PaginationItem>
                      </PaginationContent>
                   </Pagination>
