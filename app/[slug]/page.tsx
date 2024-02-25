@@ -21,6 +21,7 @@ const Articles = async ({ params }: Props) => {
    const data = await wordPressInstance.posts().slug(slug).embed();
    let categoryDetails = "";
    let primaryCategory: any = "";
+   let secondaryCategory: any = "";
 
    if (
       data[0] &&
@@ -29,14 +30,16 @@ const Articles = async ({ params }: Props) => {
       data[0]._embedded["wp:term"][0] &&
       Array.isArray(data[0]._embedded["wp:term"][0])
    ) {
-      const categories = data[0]._embedded["wp:term"][0]
-         .slice(0, 2)
-         .map((item: any) => item?.name)
-         .filter((name: any) => name)
-         .join(", ");
+      primaryCategory =
+         data[0]._embedded["wp:term"][0].find(
+            (item: any) => item?.id === data?.[0]?.categories[0],
+         ) || "";
+      secondaryCategory =
+         data[0]._embedded["wp:term"][0].find(
+            (item: any) => item?.id === data?.[0]?.categories[1],
+         ) || "";
 
-      primaryCategory = data[0]._embedded["wp:term"][0][0];
-      categoryDetails = categories;
+      categoryDetails = `${primaryCategory?.name}, ${secondaryCategory?.name}`;
    }
    const articleDetails = [
       {

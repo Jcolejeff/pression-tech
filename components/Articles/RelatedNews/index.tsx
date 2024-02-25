@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
+/* eslint-disable @next/next/no-img-element */
 import Related from "@/components/Related";
 import Link from "next/link";
 import React from "react";
