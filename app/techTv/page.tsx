@@ -10,7 +10,6 @@ import { formatDate } from "@/lib/utils";
 const TechTv = async () => {
    const res = await fetch(`${baseUrl}/techtv?acf_format=standard`, { cache: "no-store" });
    const data = await res.json();
-   console.log("data", data);
 
    const viewersChoice = data?.find((item: any) => item?.acf?.viewers_choice === true);
    return (

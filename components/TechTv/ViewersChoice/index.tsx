@@ -19,7 +19,7 @@ const ViewersChoice = ({ viewersChoice }: { viewersChoice: any }) => {
             >
                {showIframe ? (
                   <iframe
-                     className=" h-[400px] max-h-[800px] w-[400px] max-w-[1500px]  md:h-[60vh] md:w-[80vw] "
+                     className=" h-[300px] max-h-[800px] w-[340px] max-w-[1500px]  md:h-[60vh] md:w-[80vw] "
                      src={viewersChoice?.acf?.youtube_link}
                      title="YouTube video player"
                      frameBorder="0"

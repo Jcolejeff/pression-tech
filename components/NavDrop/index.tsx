@@ -141,7 +141,7 @@ const NavDrop = ({ darkNavBg }: INavDrop) => {
                   <span
                      className={` block cursor-pointer px-4  font-[700] leading-[1.5rem]  tracking-[0.005rem] text-white lg:text-[1rem] `}
                   >
-                     <a onClick={startProgress} href={url("/category/cryptocurrency")}>
+                     <a onClick={startProgress} href={url("/tech-events")}>
                         Events
                      </a>
                   </span>

@@ -10,7 +10,7 @@ const Hero = ({ data }: { data: any }) => {
    return (
       <section className="">
          <div className="p-initial border-b border-black px-container-base pb-2 pt-10 font-[400] dark:border-white lg:px-container-lg xl:px-container-xl">
-            <h2 className="text-3xl md:text-5xl">Techpression TV</h2>
+            <h2 className="pb-4  text-xl md:text-3xl">Techpression TV</h2>
          </div>
          {/* highlight of the dat */}
          <div className="mt-10 flex flex-col gap-6 px-container-base lg:px-container-lg xl:px-container-xl">
@@ -24,7 +24,7 @@ const Hero = ({ data }: { data: any }) => {
             >
                {showIframe ? (
                   <iframe
-                     className=" h-[400px] max-h-[800px] w-[400px] max-w-[1500px]  md:h-[60vh] md:w-[80vw] "
+                     className=" h-[300px] max-h-[800px] w-[340px] max-w-[1500px]  md:h-[60vh] md:w-[80vw] "
                      src={data[0]?.acf?.youtube_link}
                      title="YouTube video player"
                      frameBorder="0"

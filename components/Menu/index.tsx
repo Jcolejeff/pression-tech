@@ -22,7 +22,7 @@ const Menu = () => {
       },
       {
          title: "Upcoming Events",
-         link: "/category/upcoming-events",
+         link: "/tech-events",
       },
    ];
    const CompanyData = [

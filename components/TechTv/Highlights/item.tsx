@@ -15,7 +15,7 @@ const Item = ({ item }: { item: any }) => {
          >
             {showIframe ? (
                <iframe
-                  className=" h-[200px] max-h-[800px] w-[400px] max-w-[1500px]  md:h-[300px] md:w-[700px] "
+                  className=" h-[200px] max-h-[800px] w-[340px] max-w-[1500px]  md:h-[300px] md:w-[700px] "
                   src={item?.acf?.youtube_link}
                   title="YouTube video player"
                   frameBorder="0"
