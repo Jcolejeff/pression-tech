@@ -3,7 +3,7 @@ import SingleBlog from "@/components/Articles/ArticleDetails/dynamic";
 import Comments from "@/components/Articles/Comments";
 import RelatedNews from "@/components/Articles/RelatedNews";
 import { findAuthorName } from "@/lib/constants";
-import { wordPressInstance } from "@/lib/http";
+import { wordPressInstance, baseUrl } from "@/lib/http";
 import { formatDate } from "@/lib/utils";
 import { url } from "@/lib/utils";
 import { Facebook, Twitter, Youtube } from "lucide-react";
@@ -18,7 +18,10 @@ export const metadata = {
 const Articles = async ({ params }: Props) => {
    const { slug } = params;
 
-   const data = await wordPressInstance.posts().slug(slug).embed();
+   const res = await fetch(`${baseUrl}/posts?slug=${slug}&_embed`, {
+      cache: "no-store",
+   });
+   const data = await res.json();
    let categoryDetails = "";
    let primaryCategory: any = "";
    let secondaryCategory: any = "";

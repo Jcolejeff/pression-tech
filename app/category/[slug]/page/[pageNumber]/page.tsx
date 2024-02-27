@@ -4,7 +4,7 @@ import Articles from "@/components/Science/Articles";
 import Hero from "@/components/Science/Hero";
 import RecentArticles from "@/components/Science/RecentArticles";
 import { findAuthorName } from "@/lib/constants";
-import { wordPressInstance } from "@/lib/http";
+import { wordPressInstance, baseUrl } from "@/lib/http";
 import { timeSincePublished } from "@/lib/utils";
 import Link from "next/link";
 import {
@@ -17,19 +17,24 @@ import {
    PaginationPrevious,
 } from "components/ui/pagination";
 const Science = async ({ params }: { params: any }) => {
-   const category = await wordPressInstance.categories().slug(params?.slug);
-   let posts: any;
-   try {
-      posts = await wordPressInstance
-         .posts()
-         .categories(category[0].id)
+   const categoryResponse = await fetch(`${baseUrl}/categories?slug=${params?.slug}`);
+   const categories = await categoryResponse.json();
 
-         .perPage(20)
-         .page(params?.pageNumber)
-         .embed();
-   } catch (error) {
-      console.log(error);
-      return (posts = []);
+   let posts = [];
+
+   if (categories.length > 0) {
+      const categoryId = categories[0].id;
+
+      try {
+         const postsResponse = await fetch(
+            `${baseUrl}/posts?categories=${categoryId}&per_page=20&page=${params?.pageNumber}&_embed`,
+            { cache: "no-store" },
+         );
+         posts = await postsResponse.json();
+      } catch (error) {
+         console.log(error);
+         posts = [];
+      }
    }
 
    const getNextPageNumber = () => {
@@ -69,7 +74,7 @@ const Science = async ({ params }: { params: any }) => {
          <section className="">
             <div className="p-initial border-b border-black px-container-base pb-8 pt-10 font-[400] dark:border-white lg:px-container-lg xl:px-container-xl">
                <h2 className="text-3xl md:text-5xl">
-                  {category[0]?.name} {"    "}
+                  {categories[0]?.name} {"    "}
                </h2>
             </div>
          </section>
