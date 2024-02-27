@@ -30,9 +30,10 @@ const LandingHero = ({ heroData }: { heroData: any }) => {
                   <h4 className="text-sm font-[700] md:text-[1.2rem]">
                      {heroData[0]?._embedded["wp:term"][0][0]?.name}
                   </h4>
-                  <h2 className="mt-2 text-[1.6rem] md:text-[2rem]">
-                     {heroData[0]?.title?.rendered}
-                  </h2>
+                  <h2
+                     className="mt-2 text-[1.6rem] md:text-[2rem]"
+                     dangerouslySetInnerHTML={{ __html: heroData[0]?.title.rendered }}
+                  />
                </div>
                <Link href={`/${heroData[0]?.slug}`} className="mt-10 block">
                   <span className=" border p-[1rem] text-xs md:text-base">

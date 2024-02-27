@@ -31,11 +31,15 @@ const FeaturedPosts = ({ featuredArticlesData }: { featuredArticlesData: any }) 
          <div className="mb-52 mt-6 gap-10 md:mb-40 md:flex">
             <div className="left flex w-full flex-col gap-8">
                {featuredArticlesData?.slice(0, 3)?.map((post: any, index: number) => {
+                  const primaryCategory =
+                     post?._embedded["wp:term"][0].find(
+                        (i: any) => i?.id === post?.categories[0],
+                     ) || "";
                   return (
                      <Link href={`/${post?.slug}`} key={index} className="flex flex-col gap-4">
                         <div className="ml-[1.5rem] flex items-center gap-4">
                            <span className="text-base font-[700]">
-                              {post._embedded["wp:term"][0][0]?.name}
+                              {primaryCategory?.name || "News"}
                            </span>
                            <span className="text-sm font-[400]">
                               {/* {post?.date} */}8 min read
@@ -69,7 +73,13 @@ const FeaturedPosts = ({ featuredArticlesData }: { featuredArticlesData: any }) 
                >
                   <div className=" flex items-center gap-4">
                      <span className="text-lg font-[700]">
-                        {featuredArticlesData[3]?._embedded["wp:term"][0][0]?.name}
+                        {(() => {
+                           const primaryCategory =
+                              featuredArticlesData[3]?._embedded["wp:term"][0].find(
+                                 (i: any) => i?.id === featuredArticlesData[3]?.categories[0],
+                              ) || "";
+                           return primaryCategory?.name || "News";
+                        })()}
                      </span>
                      <span className="hidden text-base font-[400] md:block">
                         {/* {featuredArticlesData[3]?.date} */} 10 min read

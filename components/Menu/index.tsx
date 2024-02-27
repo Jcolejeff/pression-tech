@@ -18,7 +18,7 @@ const Menu = () => {
       },
       {
          title: "TechTv",
-         link: "/category/techtv",
+         link: "/techTv",
       },
       {
          title: "Upcoming Events",

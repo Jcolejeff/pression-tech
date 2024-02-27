@@ -26,7 +26,6 @@ export function NavigationEvents() {
    });
    useEffect(() => {
       const url = `${pathname}?${searchParams}`;
-      console.log(url);
       globalProgress.start();
       setTimeout(() => {
          globalProgress.done();

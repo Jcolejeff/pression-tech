@@ -42,7 +42,7 @@ const Articles = async ({ params }: Props) => {
             (item: any) => item?.id === data?.[0]?.categories[1],
          ) || "";
 
-      categoryDetails = `${primaryCategory?.name}, ${secondaryCategory?.name}`;
+      categoryDetails = `${primaryCategory?.name || "News"}, ${secondaryCategory?.name || "News"}`;
    }
    const articleDetails = [
       {

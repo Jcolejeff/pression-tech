@@ -61,39 +61,6 @@ const ReviewSlide = ({ heroData }: { heroData: any }) => {
       "https://images.unsplash.com/photo-1536987333706-fc9adfb10d91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
    ];
 
-   const reviews = [
-      {
-         img: "/images/landing/latestPosts/post1.svg",
-         text: "US senate warns apple product are been spied",
-         category: "Tech",
-      },
-      {
-         img: "/images/landing/latestPosts/post2.svg",
-         text: "US senate warns apple product are been spied",
-         category: "Tech",
-      },
-      {
-         img: "/images/landing/editorsPick/e-contract.svg",
-         text: "US senate warns apple product are been spied",
-         category: "Tech",
-      },
-      {
-         img: "/images/landing/latestPosts/post1.svg",
-         text: "US senate warns apple product are been spied",
-         category: "Tech",
-      },
-      {
-         img: "/images/landing/latestPosts/post2.svg",
-         text: "US senate warns apple product are been spied",
-         category: "Tech",
-      },
-      {
-         img: "/images/landing/editorsPick/e-contract.svg",
-         text: "US senate warns apple product are been spied",
-         category: "Tech",
-      },
-   ];
-
    return (
       <section className="relative hidden w-full justify-end border-t py-6 pb-12 md:flex">
          <div className="col-span-2   w-full ">
@@ -111,6 +78,11 @@ const ReviewSlide = ({ heroData }: { heroData: any }) => {
                responsive={responsiveSettings}
             >
                {heroData?.map((item: any, index: number) => {
+                  const primaryCategory =
+                     item?._embedded["wp:term"][0].find(
+                        (i: any) => i?.id === item?.categories[0],
+                     ) || "";
+
                   return (
                      <Link
                         href={`/${item?.slug}`}
@@ -127,11 +99,13 @@ const ReviewSlide = ({ heroData }: { heroData: any }) => {
                            </div>
                            <div className="flex h-full flex-col gap-4 p-4">
                               <span className="text-xs font-[700] text-[#00000094] dark:text-[#ffffff94]">
-                                 {item?._embedded["wp:term"][0][0]?.name}
+                                 {primaryCategory?.name || "News"}
                               </span>
-                              <h4 className="text-lg font-[700] text-black dark:text-white">
-                                 {item?.title?.rendered}
-                              </h4>
+                              <h4
+                                 className="text-lg font-[700] text-black dark:text-white"
+                                 dangerouslySetInnerHTML={{ __html: item?.title?.rendered }}
+                              />
+
                               <Link
                                  href={`/${item?.slug}`}
                                  className="text-sm text-[#00000078] dark:text-[#ffffff94]"
