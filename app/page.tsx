@@ -17,8 +17,13 @@ import ReviewSlide from "@/components/ReviewsSlide";
 import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { wordPressInstance, baseUrl } from "@/lib/http";
+
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
+export const revalidate = 0;
 export default async function Home() {
    const heroData = await wordPressInstance.posts().perPage(7).page(1).embed();
+
    const LatestPostsData = await wordPressInstance.posts().perPage(3).page(1).embed().offset(7);
    const editorsPickData = await wordPressInstance
       .posts()
