@@ -18,93 +18,93 @@ import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { wordPressInstance, baseUrl } from "@/lib/http";
 export default async function Home() {
-   // const heroData = await wordPressInstance.posts().perPage(7).page(1).embed();
-   // const LatestPostsData = await wordPressInstance.posts().perPage(3).page(1).embed().offset(7);
-   // const editorsPickData = await wordPressInstance
-   //    .posts()
-   //    .categories(99)
-   //    .perPage(3)
-   //    .page(1)
-   //    .embed();
-   // const featuredArticlesData = await wordPressInstance
-   //    .posts()
-   //    .categories(16)
-   //    .perPage(8)
-   //    .page(1)
-   //    .embed();
-   // const africanTrendingTechData = await wordPressInstance
-   //    .posts()
-   //    .categories(87)
-   //    .perPage(6)
-   //    .page(1)
-   //    .embed();
-   // const businessData = await wordPressInstance.posts().categories(69).perPage(3).page(1).embed();
-   // const cryptoData = await wordPressInstance.posts().categories(85).perPage(3).page(1).embed();
-   // const gadgetsData = await wordPressInstance.posts().categories(22).perPage(3).page(1).embed();
-   // const scienceData = await wordPressInstance.posts().categories(23).perPage(3).page(1).embed();
+   const heroData = await wordPressInstance.posts().perPage(7).page(1).embed();
+   const LatestPostsData = await wordPressInstance.posts().perPage(3).page(1).embed().offset(7);
+   const editorsPickData = await wordPressInstance
+      .posts()
+      .categories(99)
+      .perPage(3)
+      .page(1)
+      .embed();
+   const featuredArticlesData = await wordPressInstance
+      .posts()
+      .categories(16)
+      .perPage(8)
+      .page(1)
+      .embed();
+   const africanTrendingTechData = await wordPressInstance
+      .posts()
+      .categories(87)
+      .perPage(6)
+      .page(1)
+      .embed();
+   const businessData = await wordPressInstance.posts().categories(69).perPage(3).page(1).embed();
+   const cryptoData = await wordPressInstance.posts().categories(85).perPage(3).page(1).embed();
+   const gadgetsData = await wordPressInstance.posts().categories(22).perPage(3).page(1).embed();
+   const scienceData = await wordPressInstance.posts().categories(23).perPage(3).page(1).embed();
    // Fetch hero data
-   const heroResponse = await fetch(`${baseUrl}/posts?per_page=7&page=1&_embed`, {
-      cache: "no-store",
-   });
-   const heroData = await heroResponse.json();
+   // const heroResponse = await fetch(`${baseUrl}/posts?per_page=7&page=1&_embed`, {
+   //    cache: "no-store",
+   // });
+   // const heroData = await heroResponse.json();
 
-   // Fetch latest posts data, note that WP REST API doesn't support offset directly in this way
-   // You may need to handle offset manually after fetching the data or use a custom query if your WP installation supports it
-   const latestPostsResponse = await fetch(`${baseUrl}/posts?per_page=10&page=1&_embed`, {
-      cache: "no-store",
-   }); // Adjusted assuming offset is to skip the first 7 (thus, fetching the next page)
-   const LatestPostsData = await latestPostsResponse.json();
+   // // Fetch latest posts data, note that WP REST API doesn't support offset directly in this way
+   // // You may need to handle offset manually after fetching the data or use a custom query if your WP installation supports it
+   // const latestPostsResponse = await fetch(`${baseUrl}/posts?per_page=10&page=1&_embed`, {
+   //    cache: "no-store",
+   // }); // Adjusted assuming offset is to skip the first 7 (thus, fetching the next page)
+   // const LatestPostsData = await latestPostsResponse.json();
 
-   // Fetch editors pick data
-   const editorsPickResponse = await fetch(
-      `${baseUrl}/posts?categories=99&per_page=3&page=1&_embed`,
-      { cache: "no-store" },
-   );
-   const editorsPickData = await editorsPickResponse.json();
+   // // Fetch editors pick data
+   // const editorsPickResponse = await fetch(
+   //    `${baseUrl}/posts?categories=99&per_page=3&page=1&_embed`,
+   //    { cache: "no-store" },
+   // );
+   // const editorsPickData = await editorsPickResponse.json();
 
-   // Fetch featured articles data
-   const featuredArticlesResponse = await fetch(
-      `${baseUrl}/posts?categories=16&per_page=8&page=1&_embed`,
-      { cache: "no-store" },
-   );
-   const featuredArticlesData = await featuredArticlesResponse.json();
+   // // Fetch featured articles data
+   // const featuredArticlesResponse = await fetch(
+   //    `${baseUrl}/posts?categories=16&per_page=8&page=1&_embed`,
+   //    { cache: "no-store" },
+   // );
+   // const featuredArticlesData = await featuredArticlesResponse.json();
 
-   // Fetch African trending tech data
-   const africanTrendingTechResponse = await fetch(
-      `${baseUrl}/posts?categories=87&per_page=6&page=1&_embed`,
-      { cache: "no-store" },
-   );
-   const africanTrendingTechData = await africanTrendingTechResponse.json();
+   // // Fetch African trending tech data
+   // const africanTrendingTechResponse = await fetch(
+   //    `${baseUrl}/posts?categories=87&per_page=6&page=1&_embed`,
+   //    { cache: "no-store" },
+   // );
+   // const africanTrendingTechData = await africanTrendingTechResponse.json();
 
-   // Fetch business data
-   const businessResponse = await fetch(`${baseUrl}/posts?categories=69&per_page=3&page=1&_embed`, {
-      cache: "no-store",
-   });
-   const businessData = await businessResponse.json();
+   // // Fetch business data
+   // const businessResponse = await fetch(`${baseUrl}/posts?categories=69&per_page=3&page=1&_embed`, {
+   //    cache: "no-store",
+   // });
+   // const businessData = await businessResponse.json();
 
-   // Fetch crypto data
-   const cryptoResponse = await fetch(`${baseUrl}/posts?categories=85&per_page=3&page=1&_embed`, {
-      cache: "no-store",
-   });
-   const cryptoData = await cryptoResponse.json();
+   // // Fetch crypto data
+   // const cryptoResponse = await fetch(`${baseUrl}/posts?categories=85&per_page=3&page=1&_embed`, {
+   //    cache: "no-store",
+   // });
+   // const cryptoData = await cryptoResponse.json();
 
-   // Fetch gadgets data
-   const gadgetsResponse = await fetch(`${baseUrl}/posts?categories=22&per_page=3&page=1&_embed`, {
-      cache: "no-store",
-   });
-   const gadgetsData = await gadgetsResponse.json();
+   // // Fetch gadgets data
+   // const gadgetsResponse = await fetch(`${baseUrl}/posts?categories=22&per_page=3&page=1&_embed`, {
+   //    cache: "no-store",
+   // });
+   // const gadgetsData = await gadgetsResponse.json();
 
-   // Fetch science data
-   const scienceResponse = await fetch(`${baseUrl}/posts?categories=23&per_page=3&page=1&_embed`, {
-      cache: "no-store",
-   });
-   const scienceData = await scienceResponse.json();
+   // // Fetch science data
+   // const scienceResponse = await fetch(`${baseUrl}/posts?categories=23&per_page=3&page=1&_embed`, {
+   //    cache: "no-store",
+   // });
+   // const scienceData = await scienceResponse.json();
 
    return (
       <div className="h-full w-full">
          <LandingHero heroData={heroData} />
 
-         <LatestPosts latestPostsData={LatestPostsData?.slice(7)} />
+         <LatestPosts latestPostsData={LatestPostsData} />
          <EditorsPick editorsPickData={editorsPickData} />
          <FeaturedArticles featuredArticlesData={featuredArticlesData.slice(0, 4)} />
          <Trending africanTrendingTechData={africanTrendingTechData} />
