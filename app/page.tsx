@@ -18,8 +18,8 @@ import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { wordPressInstance, baseUrl } from "@/lib/http";
 export default async function Home() {
-   // const heroData = await wordPressInstance.posts().perPage(7).page(1).embed();
-   // const LatestPostsData = await wordPressInstance.posts().perPage(3).page(1).embed().offset(7);
+   const heroData = await wordPressInstance.posts().perPage(7).page(1).embed();
+   const LatestPostsData = await wordPressInstance.posts().perPage(3).page(1).embed().offset(7);
    const editorsPickData = await wordPressInstance
       .posts()
       .categories(99)
@@ -42,18 +42,17 @@ export default async function Home() {
    const cryptoData = await wordPressInstance.posts().categories(85).perPage(3).page(1).embed();
    const gadgetsData = await wordPressInstance.posts().categories(22).perPage(3).page(1).embed();
    const scienceData = await wordPressInstance.posts().categories(23).perPage(3).page(1).embed();
-   //Fetch hero data
-   const heroResponse = await fetch(`${baseUrl}/posts?per_page=10&page=1&_embed`, {
-      cache: "no-store",
-   });
-   const heroData = await heroResponse.json();
-
-   // Fetch latest posts data, note that WP REST API doesn't support offset directly in this way
-   // You may need to handle offset manually after fetching the data or use a custom query if your WP installation supports it
-   // const latestPostsResponse = await fetch(`${baseUrl}/posts?per_page=10&page=1&_embed`, {
+   // Fetch hero data
+   // const heroResponse = await fetch(`${baseUrl}/posts?per_page=7&page=1&_embed`, {
    //    cache: "no-store",
    // });
-   // Adjusted assuming offset is to skip the first 7 (thus, fetching the next page)
+   // const heroData = await heroResponse.json();
+
+   // // Fetch latest posts data, note that WP REST API doesn't support offset directly in this way
+   // // You may need to handle offset manually after fetching the data or use a custom query if your WP installation supports it
+   // const latestPostsResponse = await fetch(`${baseUrl}/posts?per_page=10&page=1&_embed`, {
+   //    cache: "no-store",
+   // }); // Adjusted assuming offset is to skip the first 7 (thus, fetching the next page)
    // const LatestPostsData = await latestPostsResponse.json();
 
    // // Fetch editors pick data
@@ -103,9 +102,9 @@ export default async function Home() {
 
    return (
       <div className="h-full w-full">
-         <LandingHero heroData={heroData?.slice(0, 7)} />
+         <LandingHero heroData={heroData} />
 
-         <LatestPosts latestPostsData={heroData?.slice(7)} />
+         <LatestPosts latestPostsData={LatestPostsData} />
          <EditorsPick editorsPickData={editorsPickData} />
          <FeaturedArticles featuredArticlesData={featuredArticlesData.slice(0, 4)} />
          <Trending africanTrendingTechData={africanTrendingTechData} />
