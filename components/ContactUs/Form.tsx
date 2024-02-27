@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { cn } from "lib/utils";
 import { ChevronDown, ChevronRightIcon } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 import {
    Form,
@@ -16,11 +17,11 @@ import {
 } from "components/ui/form";
 import { Input } from "components/ui/input";
 import { Textarea } from "components/ui/textarea";
-import { toast } from "components/ui/use-toast";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import useUserLocation from "lib/hooks/useUserLocation";
+import { toast } from "react-toastify";
 
 import { API_URL, APP_URL, BUSINESS_TYPES } from "lib/constants";
 import $http from "lib/http";
@@ -37,27 +38,24 @@ interface Iprops {
 }
 
 const FormSchema = z.object({
-   email: z
+   user_email: z
       .string()
       .min(2, {
          message: "Please enter a valid email.",
       })
       .email(),
 
-   phone_number: z.string().min(2, {
+   user_phone: z.string().min(2, {
       message: "Please enter a valid Number.",
    }),
 
-   first_name: z.string({
-      required_error: "Name is required.",
-   }),
-   last_name: z.string({
+   user_name: z.string({
       required_error: "Name is required.",
    }),
 
    phone_country_code: z.string(),
    currency_code: z.string(),
-   description: z
+   message: z
       .string()
       .min(10, {
          message: "Message must be at least 10 characters.",
@@ -68,6 +66,8 @@ const FormSchema = z.object({
 });
 
 function ContactUsForm({ businessType, title, subTitle, breadcrumb }: Iprops) {
+   const formRef = useRef<HTMLFormElement | null>(null);
+
    const [phoneCountry, setPhoneCountry] = useState("");
    const [formIsLoading, setFormIsLoading] = useState(false);
    const [success, setSuccess] = useState(false);
@@ -86,22 +86,40 @@ function ContactUsForm({ businessType, title, subTitle, breadcrumb }: Iprops) {
    async function onSubmit(data: z.infer<typeof FormSchema>) {
       setFormIsLoading(true);
 
-      const subscriberPayload = {
-         email: data?.email,
-         phone: data?.phone_number,
-         phone_country_code: data?.phone_country_code,
-      };
-
       try {
-         //    const { data } = await $http.post(`${API_URL}/subscribers`, subscriberPayload);
-         setSuccess(true);
-         console.log(data);
-
+         const data = await emailjs.sendForm(
+            "service_k08w62w",
+            "template_gxbdzpy",
+            formRef.current as HTMLFormElement,
+            "X3OkpMZncUC0S79v4",
+         );
          setMessage({ text: "Message Sent Successfully", isError: false });
-         //    form.reset();
-      } catch (error) {
+
+         toast.info("Thanks for contacting us, we will get back to you shortly", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+         });
+      } catch (error: any) {
          setMessage({ text: ProcessError(error), isError: true });
+
+         toast.error("Error sending message, please try again", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+         });
       }
+
       setFormIsLoading(false);
    }
 
@@ -112,29 +130,33 @@ function ContactUsForm({ businessType, title, subTitle, breadcrumb }: Iprops) {
          countryCode: countryData.dialCode,
       }));
 
-      form.setValue("phone_number", phone);
+      form.setValue("user_phone", phone);
       form.setValue("phone_country_code", `+${countryData?.dialCode}`);
       setPhoneCountry(countryData?.iso2);
    };
 
    useEffect(() => {
-      form.setValue("phone_number", location?.country_calling_code!);
+      form.setValue("user_phone", location?.country_calling_code!);
       form.setValue("currency_code", location?.currency);
    }, [location?.country_calling_code, location?.currency]);
 
    return (
       <div className=" relative flex  w-full    flex-col gap-4 rounded-[15px]">
          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="flex w-full flex-col gap-4">
-               <section className=" grid grid-cols-1 gap-6 md:grid-cols-[1fr_1fr]  ">
+            <form
+               ref={formRef}
+               onSubmit={form.handleSubmit(onSubmit)}
+               className="flex w-full flex-col gap-4"
+            >
+               <section className=" grid grid-cols-1 gap-6   ">
                   <FormField
                      control={form.control}
-                     name="first_name"
+                     name="user_name"
                      render={({ field }) => (
                         <FormItem>
                            <div className="relative">
                               <label className="mb-4 block   rounded-full text-base ">
-                                 First Name
+                                 Full Name
                               </label>
                               <FormControl>
                                  <Input
@@ -148,33 +170,12 @@ function ContactUsForm({ businessType, title, subTitle, breadcrumb }: Iprops) {
                         </FormItem>
                      )}
                   />
-                  <FormField
-                     control={form.control}
-                     name="last_name"
-                     render={({ field }) => (
-                        <FormItem>
-                           <div className="relative">
-                              <label className="mb-4 block rounded-full text-base ">
-                                 Last Name
-                              </label>
-                              <FormControl>
-                                 <Input
-                                    className="bg-white py-8 text-lg transition-all duration-200 ease-in-out  placeholder:text-lg  placeholder:text-gray-300 focus-within:placeholder:text-secondary-2 focus:bg-[#DBF1FF] "
-                                    placeholder="Doe"
-                                    {...field}
-                                 />
-                              </FormControl>
-                           </div>
-                           <FormMessage className="mt-1 text-base" />
-                        </FormItem>
-                     )}
-                  />
                </section>
 
                <section className=" grid grid-cols-1 gap-6 md:grid-cols-[1fr_1fr]  ">
                   <FormField
                      control={form.control}
-                     name="email"
+                     name="user_email"
                      render={({ field }) => (
                         <FormItem>
                            <div className="relative">
@@ -194,7 +195,7 @@ function ContactUsForm({ businessType, title, subTitle, breadcrumb }: Iprops) {
 
                   <FormField
                      control={form.control}
-                     name="phone_number"
+                     name="user_phone"
                      render={({ field }) => (
                         <FormItem>
                            <div className="relative">
@@ -252,12 +253,10 @@ function ContactUsForm({ businessType, title, subTitle, breadcrumb }: Iprops) {
 
                <FormField
                   control={form.control}
-                  name="description"
+                  name="message"
                   render={({ field }) => (
                      <FormItem>
-                        <label className="mb-4 block rounded-full text-base ">
-                           Optional Message
-                        </label>
+                        <label className="mb-4 block rounded-full text-base ">Message</label>
                         <FormControl>
                            <Textarea
                               rows={8}
