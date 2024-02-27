@@ -18,8 +18,8 @@ import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { wordPressInstance, baseUrl } from "@/lib/http";
 
-// export const dynamic = "force-dynamic";
-export const fetchCache = "force-no-store";
+export const dynamic = "force-dynamic";
+// export const fetchCache = "force-no-store";
 // export const revalidate = 0;
 export default async function Home() {
    const heroData = await wordPressInstance.posts().perPage(7).page(1).embed();
