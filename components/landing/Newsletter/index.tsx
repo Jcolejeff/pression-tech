@@ -3,7 +3,7 @@ import React from "react";
 
 const Newsletter = () => {
    return (
-      <section className="container hidden max-w-[1700px]  px-container-base py-[3rem] md:block lg:px-container-lg xl:px-container-xl">
+      <section className="container hidden max-w-[2100px]  px-container-base py-[3rem] md:block lg:px-container-lg xl:px-container-xl">
          <div className=" bg-[#D8DCE1] py-24 dark:bg-[#25282D] md:px-20 lg:px-40">
             <div className="] flex w-full justify-between">
                <p className="w-full text-xl font-[400] dark:text-white">

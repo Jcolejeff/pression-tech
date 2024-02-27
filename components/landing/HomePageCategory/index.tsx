@@ -15,7 +15,7 @@ interface HomePageCategoryProps {
 }
 const HomePageCategory = ({ title, data, slug, id }: HomePageCategoryProps) => {
    return (
-      <section className="container max-w-[1700px] border-t border-[#000] px-container-base py-[3rem] dark:border-white lg:px-container-lg xl:px-container-xl">
+      <section className="container max-w-[2100px] border-t border-[#000] px-container-base py-[3rem] dark:border-white lg:px-container-lg xl:px-container-xl">
          <div className="general grid-cols-6 gap-20 md:grid">
             <Link href={`/${data[0]?.slug}`} className="first relative col-span-3 block">
                <Heading title={title} />

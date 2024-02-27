@@ -13,7 +13,7 @@ const TechTv = async () => {
 
    const viewersChoice = data?.find((item: any) => item?.acf?.viewers_choice === true);
    return (
-      <div className="container mt-24 min-h-screen w-full max-w-[1700px] scroll-mt-28 bg-transparent ">
+      <div className="container mt-24 min-h-screen w-full max-w-[2100px] scroll-mt-28 bg-transparent ">
          <Hero data={data} />
          {/* others */}
          <OtherVideos

@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const FeaturedArticles = ({ featuredArticlesData }: { featuredArticlesData: any }) => {
    return (
-      <section className="container w-full max-w-[1700px] border-t border-[#000] px-container-base py-[3rem] dark:border-white lg:px-container-lg xl:px-container-xl">
+      <section className="container w-full max-w-[2100px] border-t border-[#000] px-container-base py-[3rem] dark:border-white lg:px-container-lg xl:px-container-xl">
          <Heading title="Featured articles" />
          <div className="mt-6 grid-cols-2 gap-20 md:grid">
             <div className=" flex flex-col gap-10">

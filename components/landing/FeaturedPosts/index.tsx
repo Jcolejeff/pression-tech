@@ -26,7 +26,7 @@ const FeaturedPosts = ({ featuredArticlesData }: { featuredArticlesData: any }) 
       },
    ];
    return (
-      <section className="container  max-w-[1700px] border-t border-[#000] px-container-base py-[3rem] dark:border-white lg:px-container-lg xl:px-container-xl">
+      <section className="container  max-w-[2100px] border-t border-[#000] px-container-base py-[3rem] dark:border-white lg:px-container-lg xl:px-container-xl">
          <Heading title="Featured Post" />
          <div className="mb-52 mt-6 gap-10 md:mb-40 md:flex">
             <div className="left flex w-full flex-col gap-8">

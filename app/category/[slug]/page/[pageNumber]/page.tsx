@@ -65,7 +65,7 @@ const Science = async ({ params }: { params: any }) => {
    }
 
    return (
-      <div className="container mt-24 min-h-screen w-full max-w-[1700px] scroll-mt-28 bg-transparent ">
+      <div className="container mt-24 min-h-screen w-full max-w-[2100px] scroll-mt-28 bg-transparent ">
          <section className="">
             <div className="p-initial border-b border-black px-container-base pb-8 pt-10 font-[400] dark:border-white lg:px-container-lg xl:px-container-xl">
                <h2 className="text-3xl md:text-5xl">

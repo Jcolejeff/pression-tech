@@ -81,7 +81,7 @@ const Articles = async ({ params }: Props) => {
    //    });
 
    return (
-      <div className="container  min-h-screen w-full max-w-[1700px] scroll-mt-28 bg-transparent  px-container-base lg:px-container-lg   xl:px-container-xl">
+      <div className="container  min-h-screen w-full max-w-[2100px] scroll-mt-28 bg-transparent  px-container-base lg:px-container-lg   xl:px-container-xl">
          <div className="flex h-full w-full flex-col items-center">
             {/* header */}
             <section>

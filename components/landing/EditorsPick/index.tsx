@@ -9,7 +9,7 @@ import Link from "next/link";
 
 const EditorsPick = ({ editorsPickData }: { editorsPickData: any }) => {
    return (
-      <section className="container w-full max-w-[1700px] grid-cols-3 gap-20 border-t border-[#000] px-container-base py-[3rem] dark:border-white md:grid lg:px-container-lg xl:px-container-xl">
+      <section className="container w-full max-w-[2100px] grid-cols-3 gap-20 border-t border-[#000] px-container-base py-[3rem] dark:border-white md:grid lg:px-container-lg xl:px-container-xl">
          <Link href={`${editorsPickData[2]?.slug}`} className="col-span-2 flex flex-col gap-6 ">
             <Heading title="Editor's pick" />
             <img

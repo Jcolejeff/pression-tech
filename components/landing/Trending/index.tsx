@@ -6,7 +6,7 @@ import React from "react";
 
 const Trending = ({ africanTrendingTechData }: { africanTrendingTechData: any }) => {
    return (
-      <section className="container w-full max-w-[1700px] border-b border-t border-[#000] px-container-base py-[3rem] dark:border-white lg:px-container-lg xl:px-container-xl">
+      <section className="container w-full max-w-[2100px] border-b border-t border-[#000] px-container-base py-[3rem] dark:border-white lg:px-container-lg xl:px-container-xl">
          <Heading title="Trending in Africa tech space" />
          <div className="mt-6 grid-cols-3 items-start gap-12 md:grid">
             {africanTrendingTechData?.map((trend: any, index: number) => {

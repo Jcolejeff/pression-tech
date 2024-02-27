@@ -81,7 +81,7 @@ export default async function PostPage({ params }: any) {
    }
 
    return (
-      <article className="container mt-24 min-h-screen w-full max-w-[1700px] bg-transparent px-container-base lg:px-container-lg xl:px-container-xl">
+      <article className="container mt-24 min-h-screen w-full max-w-[2100px] bg-transparent px-container-base lg:px-container-lg xl:px-container-xl">
          <h1 className="mb-2">{post.title}</h1>
          {post.description && (
             <p className="mt-0 text-xl text-slate-700 dark:text-slate-200 md:px-2 xl:pb-6 2xl:p-6 ">

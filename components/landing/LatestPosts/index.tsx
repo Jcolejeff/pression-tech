@@ -12,7 +12,7 @@ import Link from "next/link";
 
 const LatestPosts = ({ latestPostsData }: { latestPostsData: any }) => {
    return (
-      <section className="container flex max-w-[1700px] flex-col gap-6 px-container-base py-[3rem] lg:px-container-lg xl:px-container-xl">
+      <section className="container flex max-w-[2100px] flex-col gap-6 px-container-base py-[3rem] lg:px-container-lg xl:px-container-xl">
          <Heading title="Latest Post" />
          <div className="grid gap-10 md:grid-cols-3">
             {latestPostsData?.map((post: any, index: number) => {

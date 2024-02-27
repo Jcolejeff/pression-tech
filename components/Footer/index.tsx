@@ -102,7 +102,7 @@ const Footer = ({}: IFooter) => {
       },
    ];
    return (
-      <div className="container relative  flex w-full  max-w-[1700px] flex-col  bg-primary-4 ">
+      <div className="container relative  flex w-full  max-w-[2100px] flex-col  bg-primary-4 ">
          <div className="mt-[3rem] px-container-base lg:px-container-lg xl:px-container-xl">
             <h4 className="text-[1.5rem] font-[700] text-white ">Techpression</h4>
          </div>

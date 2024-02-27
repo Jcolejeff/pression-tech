@@ -30,7 +30,7 @@ const Item = ({ item }: { item: any }) => {
                      className=" h-full w-full object-cover"
                   />
                   <div
-                     className="absolute left-1/2 top-1/2 flex h-full w-full -translate-x-1/2 -translate-y-1/2 transform cursor-pointer items-center justify-center bg-black/30  transition-all duration-200  ease-linear hover:scale-110 hover:backdrop-blur-sm
+                     className="absolute left-1/2 top-1/2 flex h-full w-full -translate-x-1/2 -translate-y-1/2 transform cursor-pointer items-center justify-center bg-black/30  transition-all duration-200  ease-linear  hover:backdrop-blur-sm
                         
                         "
                   >
