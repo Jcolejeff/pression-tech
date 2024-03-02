@@ -133,7 +133,7 @@ const NavDrop = ({ darkNavBg }: INavDrop) => {
                      className={` block cursor-pointer px-4  font-[700] leading-[1.5rem]  tracking-[0.005rem] text-white lg:text-[1rem] `}
                   >
                      <a onClick={startProgress} href={url("/techTv")}>
-                        TechTv
+                        Tech Tv
                      </a>
                   </span>
                </NavigationMenuItem>
@@ -150,7 +150,7 @@ const NavDrop = ({ darkNavBg }: INavDrop) => {
                   <span
                      className={` block cursor-pointer px-4  font-[700] leading-[1.5rem]  tracking-[0.005rem] text-white lg:text-[1rem] `}
                   >
-                     <Link href={url("/contactUs")}>ContactUs</Link>
+                     <Link href={url("/contactUs")}>Contact Us</Link>
                   </span>
                </NavigationMenuItem>
             </NavigationMenuList>

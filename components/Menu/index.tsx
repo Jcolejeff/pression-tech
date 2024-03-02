@@ -77,7 +77,7 @@ const Menu = () => {
                   <a onClick={startProgress} href="/" className="flex items-center gap-2">
                      <img src={url("/images/logo.svg")} alt="" className=" w-8 md:w-10 " />
                      <p className="text-[0.74rem] font-semibold text-white md:text-base">
-                        Tech Pression
+                        TechPression
                      </p>
                   </a>
 
